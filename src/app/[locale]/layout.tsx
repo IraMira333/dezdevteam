@@ -5,10 +5,10 @@ import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 
+import { Background } from "@/src/components/shared/Background";
 import { routing } from "@/src/i18n/routing";
 
 const inter = Inter({
-  variable: "--font-inter",
   subsets: ["latin"],
 });
 
@@ -32,7 +32,7 @@ export default async function LocaleLayout({
     notFound();
   }
   return (
-    <html lang={locale} className={`${inter.variable} `}>
+    <html lang={locale} className={inter.className}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         {/* <meta name="image" property="og:image" content="/imageForSharing.jpg" />
@@ -41,6 +41,7 @@ export default async function LocaleLayout({
       </head>
       <body>
         <NextIntlClientProvider>
+          <Background />
           <div className="flex min-h-screen flex-col">
             {/* <Header /> */}
 
@@ -48,7 +49,7 @@ export default async function LocaleLayout({
               {children}
               {/* <Analytics /> */}
             </main>
-            <footer className="bg-footer tab:pt-10 tab:pb-[43px] border-lightBorder flex-[0_0_auto] border-t px-4 pt-15 pb-16.25"></footer>
+            <footer className="bg-footer tab:pt-10 tab:pb-10.75 border-lightBorder flex-[0_0_auto] border-t px-4 pt-15 pb-16.25"></footer>
             {/* <Footer /> */}
           </div>
         </NextIntlClientProvider>
