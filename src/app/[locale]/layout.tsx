@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 
+import { Header } from "@/src/components/header/Header";
 import { Background } from "@/src/components/shared/Background";
 import { routing } from "@/src/i18n/routing";
 
@@ -43,8 +44,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <Background />
           <div className="flex min-h-screen flex-col">
-            {/* <Header /> */}
-
+            <Header />
             <main className="flex flex-[1_0_auto]">
               {children}
               {/* <Analytics /> */}

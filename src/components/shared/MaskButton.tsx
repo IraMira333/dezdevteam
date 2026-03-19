@@ -1,12 +1,14 @@
-export default function MaskButton() {
+export const MaskButton = ({ text }: { text: string }) => {
   return (
-    <div className="relative mx-auto mt-20 h-12.5 w-25 overflow-hidden rounded-lg border border-black">
-      <div className="absolute inset-0 bg-white" />
-      <span className="pointer-events-none absolute inset-0 flex items-center justify-center text-[11px] font-bold text-black">
-        MASK3
+    <div className="border-whitef0 relative h-11 w-47.5 overflow-hidden border">
+      <div className="bg-whitef0 absolute inset-0" />
+      <span className="text-black06 pointer-events-none absolute inset-0 flex items-center justify-center text-sm font-bold uppercase">
+        {text}
       </span>
 
-      <button className="mask-btn h-full w-full text-[11px] font-bold text-white">MASK3</button>
+      <button className="mask-btn text-whitef0 h-full w-full text-sm font-bold uppercase">
+        {text}
+      </button>
     </div>
   );
-}
+};

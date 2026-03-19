@@ -3,7 +3,7 @@
 @theme inline {
   /* 🎨 Кольори */
   --color-black06: #060606;
-  --сolor-black05: #050505;
+  --color-black05: #050505;
   --color-black03: #030303;
   --сolor-black0A: #0a0a0a;
   --color-grey22: #222222;
@@ -25,6 +25,7 @@
 body {
   background-color: var(--color-black03);
   color: var(--color-grey88);
+  font-size: 14px;
 }
 button,
 a {
@@ -32,7 +33,7 @@ a {
 }
 
 .mask-btn {
-  background: black;
+  background: #050505;
   cursor: pointer;
 
   -webkit-mask: url("/natureSmaller.png");
@@ -76,8 +77,8 @@ a {
   height: 50px;
   border: none;
   outline: none;
-  color: #fff;
-  background: #111;
+  color: #f0f0f0;
+  background: #050505;
   cursor: pointer;
   position: relative;
   z-index: 0;
@@ -113,7 +114,7 @@ a {
 }
 
 .glow-on-hover:active {
-  color: #000;
+  color: #050505;
 }
 
 .glow-on-hover:active:after {
@@ -130,7 +131,7 @@ a {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #111;
+  background: #f0f0f0;
   left: 0;
   top: 0;
   border-radius: 10px;
