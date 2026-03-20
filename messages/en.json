@@ -1,6 +1,7 @@
 {
   "HomePage": {
-    "title": "Hello world!",
-    "btnContactUs": "Contact us"
+    "title": "the new project",
+    "btnContactUs": "Contact us",
+    "description": "website development and redesign for your business"
   }
 }
