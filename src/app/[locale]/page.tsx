@@ -1,10 +1,9 @@
-import { useTranslations } from "next-intl";
+import { Hero } from "@/src/components/main/Hero";
 
 export default function Home() {
-  const t = useTranslations("HomePage");
   return (
-    <div className="mx-auto mt-20">
-      <h1>{t("title")}</h1>
+    <div className="mx-auto mt-19.5">
+      <Hero />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 {
   "HomePage": {
-    "title": "the new project",
+    "text": "the new \nproject",
     "btnContactUs": "Contact us",
-    "description": "website development and redesign for your business"
+    "title": "website development and redesign \nfor your business"
   }
 }
