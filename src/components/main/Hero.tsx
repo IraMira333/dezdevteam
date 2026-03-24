@@ -12,6 +12,7 @@ export const Hero = () => {
   const locale = useLocale();
   const newestProjectData = projectsData[projectsData.length - 1];
   const projectsDataWithoutNewest = projectsData.slice(0, -1);
+  const projectsReversed = [...projectsDataWithoutNewest].reverse();
 
   return (
     <div className="">
@@ -46,7 +47,7 @@ export const Hero = () => {
           <GlowButton text="Дивитись проєкт" />
         </div>
       </div>
-      <ProjectsList list={projectsDataWithoutNewest} locale={locale as LocaleType} />
+      <ProjectsList list={projectsReversed} locale={locale as LocaleType} />
     </div>
   );
 };
