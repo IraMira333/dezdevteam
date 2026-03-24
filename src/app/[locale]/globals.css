@@ -33,7 +33,6 @@ a {
 }
 
 .mask-btn {
-  background: #050505;
   cursor: pointer;
 
   -webkit-mask: url("/natureSmaller.png");
@@ -43,6 +42,19 @@ a {
   mask-size: 7100% 100%;
 
   animation: mask-reset 0.7s steps(70) forwards;
+}
+
+.mask-btn:hover {
+  animation: mask-play 0.7s steps(70) forwards;
+}
+
+/* variants */
+.mask-dark {
+  background: #050505;
+}
+
+.mask-light {
+  background: #ffffff;
 }
 
 .mask-btn:hover {
