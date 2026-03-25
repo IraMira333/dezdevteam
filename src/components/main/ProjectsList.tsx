@@ -1,7 +1,6 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 
@@ -20,6 +19,7 @@ export const ProjectsList = ({
 }) => {
   const t = useTranslations("HomePage");
   const [activeIndex, setActiveIndex] = useState(0);
+  const lastIndexRef = useRef(0);
   const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
 
   useEffect(() => {
@@ -35,6 +35,7 @@ export const ProjectsList = ({
 
         let closestIndex = 0;
         let closestDistance = Infinity;
+        const DEAD_ZONE = 140;
 
         itemRefs.current.forEach((el, index) => {
           if (!el) return;
@@ -43,14 +44,24 @@ export const ProjectsList = ({
           const elCenter = rect.top + rect.height / 2;
 
           const distance = Math.abs(center - elCenter);
-
+          if (distance < DEAD_ZONE) {
+            closestIndex = index;
+            closestDistance = 0;
+            return;
+          }
           if (distance < closestDistance) {
             closestDistance = distance;
             closestIndex = index;
           }
         });
 
-        setActiveIndex(closestIndex);
+        if (closestIndex !== lastIndexRef.current) {
+          lastIndexRef.current = closestIndex;
+
+          setTimeout(() => {
+            setActiveIndex(closestIndex);
+          }, 120);
+        }
         ticking = false;
       });
     };
@@ -85,9 +96,9 @@ export const ProjectsList = ({
                 {isActive && (
                   <motion.div
                     key="image"
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.98 }}
                     transition={{ duration: 0.4 }}
                     className="relative overflow-hidden"
                   >
@@ -144,33 +155,21 @@ export const ProjectsList = ({
                 </AnimatePresence>
               </div>
 
-              <AnimatePresence mode="wait">
+              <motion.div transition={{ duration: 0.3 }}>
                 {isActive ? (
-                  <motion.div
-                    key="mask"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                  >
-                    <MaskLink text={t("projectDetails")} link={project.link} white />
-                  </motion.div>
+                  <MaskLink text={t("projectDetails")} link={project.link} white />
                 ) : (
-                  <motion.div
-                    key="link"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-whiteff flex w-fit items-center py-3.5 text-sm font-bold uppercase underline"
                   >
-                    <Link
-                      href={project.link}
-                      className="text-whiteff flex w-fit items-center py-3.5 text-sm font-bold uppercase underline"
-                    >
-                      {t("projectDetails")}
-                      <IconArrow className="ml-2 h-5 w-5 stroke-2" />
-                    </Link>
-                  </motion.div>
+                    {t("projectDetails")}
+                    <IconArrow className="ml-2 h-5 w-5 stroke-2" />
+                  </a>
                 )}
-              </AnimatePresence>
+              </motion.div>
             </motion.li>
           );
         })}
