@@ -5,7 +5,7 @@
   --color-black06: #060606;
   --color-black05: #050505;
   --color-black03: #030303;
-  --сolor-black0A: #0a0a0a;
+  --color-black0a: #0a0a0a;
   --color-grey22: #222222;
   --color-whitef0: #f0f0f0;
   --color-whiteff: #ffffff;
@@ -27,6 +27,7 @@ body {
   color: var(--color-grey88);
   font-size: 14px;
 }
+
 button,
 a {
   cursor: pointer;
@@ -169,5 +170,15 @@ a {
   }
   100% {
     background-position: 0 0;
+  }
+}
+
+@layer components {
+  .casual-container {
+    @apply tab:max-w-full tab:px-8 pc:max-w-360 pc:px-20 mx-auto w-full max-w-130 px-4;
+  }
+
+  .nopadding-container {
+    @apply tab:max-w-full pc:max-w-360 mx-auto w-full max-w-130;
   }
 }

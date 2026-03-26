@@ -4,6 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { LocaleType } from "@/src/types/LocaleTypes";
 
 import { projectsData } from "../assets/projectsData";
+import { CustomTitle } from "../shared/CustomTitle";
 import { GlowButton } from "../shared/GlowButton";
 import { ProjectsList } from "./ProjectsList";
 
@@ -15,18 +16,14 @@ export const Hero = () => {
   const projectsReversed = [...projectsDataWithoutNewest].reverse();
 
   return (
-    <div className="">
+    <section className="nopadding-container mt-19.5">
       <div className="mb-8 px-4">
-        <div className="text-whiteff mb-10 flex gap-0.5 text-base leading-[130%] font-light">
-          <span className="">{"{"} </span>
-          <h1 className="whitespace-pre-line uppercase">{t("title")}</h1>
-          <span className="self-end">{"}"}</span>
-        </div>
+        <CustomTitle text={t("title")} className="mb-10" />
         <p className="text-whitef0 text-[56px] leading-[90%] font-medium whitespace-pre-line uppercase">
           {t("text")}
         </p>
       </div>
-      <div className="relative mb-26.5">
+      <div className="relative mx-auto mb-26.5 w-fit">
         <Image
           src={newestProjectData.image}
           alt={newestProjectData[locale as LocaleType].title}
@@ -48,6 +45,6 @@ export const Hero = () => {
         </div>
       </div>
       <ProjectsList list={projectsReversed} locale={locale as LocaleType} />
-    </div>
+    </section>
   );
 };

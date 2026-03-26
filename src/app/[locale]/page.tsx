@@ -1,9 +1,11 @@
 import { Hero } from "@/src/components/main/Hero";
+import { Offer } from "@/src/components/main/Offer";
 
 export default function Home() {
   return (
-    <div className="mx-auto mt-19.5">
+    <>
       <Hero />
-    </div>
+      <Offer />
+    </>
   );
 }

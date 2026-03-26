@@ -78,7 +78,7 @@ export const ProjectsList = ({
         <span aria-hidden="true" className="bg-whiteff block h-3.5 w-3.5 shrink-0" />
         {t("ourProjects", { year: new Date().getFullYear() })}
       </h2>
-      <ul className="flex flex-col gap-3">
+      <ul className="flex w-full flex-col gap-3">
         {list.map((project, index) => {
           const isActive = index === activeIndex;
 
@@ -90,7 +90,7 @@ export const ProjectsList = ({
               }}
               layout
               transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-              className="bg-black06 flex min-h-42.5 flex-col gap-4 p-3"
+              className="bg-black06 flex min-h-42.5 min-w-full flex-col gap-4 p-3"
             >
               <AnimatePresence initial={false}>
                 {isActive && (
@@ -102,7 +102,7 @@ export const ProjectsList = ({
                     transition={{ duration: 0.4 }}
                     className="relative overflow-hidden"
                   >
-                    <div className="relative aspect-326/242 w-full">
+                    <div className="relative mx-auto aspect-326/242 h-auto w-full max-w-111">
                       <Image
                         src={project.image}
                         alt={project[locale].title}
@@ -163,7 +163,7 @@ export const ProjectsList = ({
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-whiteff flex w-fit items-center py-3.5 text-sm font-bold uppercase underline"
+                    className="text-whiteff flex w-fit items-center py-3 text-sm font-bold uppercase underline"
                   >
                     {t("projectDetails")}
                     <IconArrow className="ml-2 h-5 w-5 stroke-2" />
