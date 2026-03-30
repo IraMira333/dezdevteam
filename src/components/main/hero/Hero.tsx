@@ -3,22 +3,21 @@ import { useLocale, useTranslations } from "next-intl";
 
 import { LocaleType } from "@/src/types/LocaleTypes";
 
-import { projectsData } from "../assets/projectsData";
-import { CustomTitle } from "../shared/CustomTitle";
-import { GlowButton } from "../shared/GlowButton";
+import { projectsData } from "../../assets/projectsData";
+import { CustomTitleH1 } from "../../shared/CustomTitle";
+import { GlowButton } from "../../shared/GlowButton";
 import { ProjectsList } from "./ProjectsList";
 
 export const Hero = () => {
   const t = useTranslations("HomePage");
   const locale = useLocale();
-  const newestProjectData = projectsData[projectsData.length - 1];
-  const projectsDataWithoutNewest = projectsData.slice(0, -1);
-  const projectsReversed = [...projectsDataWithoutNewest].reverse();
+  const newestProjectData = projectsData[0];
+  const projectsDataWithoutNewest = projectsData.slice(1);
 
   return (
     <section className="nopadding-container mt-19.5">
       <div className="mb-8 px-4">
-        <CustomTitle text={t("title")} className="mb-10" />
+        <CustomTitleH1 text={t("title")} className="mb-10" />
         <p className="text-whitef0 text-[56px] leading-[90%] font-medium whitespace-pre-line uppercase">
           {t("text")}
         </p>
@@ -44,7 +43,7 @@ export const Hero = () => {
           <GlowButton text="Дивитись проєкт" />
         </div>
       </div>
-      <ProjectsList list={projectsReversed} locale={locale as LocaleType} />
+      <ProjectsList list={projectsDataWithoutNewest} locale={locale as LocaleType} />
     </section>
   );
 };
