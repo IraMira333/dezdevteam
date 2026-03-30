@@ -1,0 +1,137 @@
+import { IconProps } from "@/src/types/IconsPropType";
+
+export const IconBullet = ({ className }: IconProps) => {
+  return (
+    <svg
+      width="17"
+      height="17"
+      viewBox="0 0 17 17"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-label="bullet"
+    >
+      <rect width="4.02235" height="4.02235" fill="#D9D9D9" />
+      <rect width="4.02235" height="4.02235" fill="url(#paint0_linear_327_86)" />
+      <rect x="4.02246" width="4.02235" height="4.02235" fill="#D9D9D9" />
+      <rect x="4.02246" width="4.02235" height="4.02235" fill="url(#paint1_linear_327_86)" />
+      <rect x="8.04492" width="4.02235" height="4.02235" fill="#D9D9D9" />
+      <rect x="8.04492" width="4.02235" height="4.02235" fill="url(#paint2_linear_327_86)" />
+      <rect x="12.0669" width="4.02235" height="4.02235" fill="#D9D9D9" />
+      <rect x="12.0669" width="4.02235" height="4.02235" fill="url(#paint3_linear_327_86)" />
+      <rect
+        x="12.0669"
+        y="4.02246"
+        width="4.02235"
+        height="4.02235"
+        fill="url(#paint4_linear_327_86)"
+      />
+      <rect
+        x="12.0669"
+        y="8.04468"
+        width="4.02235"
+        height="4.02235"
+        fill="url(#paint5_linear_327_86)"
+      />
+      <rect
+        x="12.0669"
+        y="12.0671"
+        width="4.02235"
+        height="4.02235"
+        fill="url(#paint6_linear_327_86)"
+      />
+      <rect y="12.0671" width="4.02235" height="4.02235" fill="#D9D9D9" />
+      <rect y="12.0671" width="4.02235" height="4.02235" fill="url(#paint7_linear_327_86)" />
+      <defs>
+        <linearGradient
+          id="paint0_linear_327_86"
+          x1="2.89467e-08"
+          y1="2.05838"
+          x2="3.88517"
+          y2="2.05838"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0.221154" stopColor="#FF4B2F" />
+          <stop offset="0.805818" stopColor="#FF9148" />
+        </linearGradient>
+        <linearGradient
+          id="paint1_linear_327_86"
+          x1="4.02246"
+          y1="2.05838"
+          x2="7.90764"
+          y2="2.05838"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0.221154" stopColor="#FF4B2F" />
+          <stop offset="0.805818" stopColor="#FF9148" />
+        </linearGradient>
+        <linearGradient
+          id="paint2_linear_327_86"
+          x1="8.04492"
+          y1="2.05838"
+          x2="11.9301"
+          y2="2.05838"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0.221154" stopColor="#FF4B2F" />
+          <stop offset="0.805818" stopColor="#FF9148" />
+        </linearGradient>
+        <linearGradient
+          id="paint3_linear_327_86"
+          x1="12.0669"
+          y1="2.05838"
+          x2="15.9521"
+          y2="2.05838"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0.221154" stopColor="#FF4B2F" />
+          <stop offset="0.805818" stopColor="#FF9148" />
+        </linearGradient>
+        <linearGradient
+          id="paint4_linear_327_86"
+          x1="14.0781"
+          y1="8.04481"
+          x2="14.0781"
+          y2="4.02246"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0.221154" stopColor="#FF4B2F" />
+          <stop offset="0.805818" stopColor="#FF9148" />
+        </linearGradient>
+        <linearGradient
+          id="paint5_linear_327_86"
+          x1="14.0781"
+          y1="12.067"
+          x2="14.0781"
+          y2="8.04468"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0.221154" stopColor="#FF4B2F" />
+          <stop offset="0.805818" stopColor="#FF9148" />
+        </linearGradient>
+        <linearGradient
+          id="paint6_linear_327_86"
+          x1="14.0781"
+          y1="16.0895"
+          x2="14.0781"
+          y2="12.0671"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0.221154" stopColor="#FF4B2F" />
+          <stop offset="0.805818" stopColor="#FF9148" />
+        </linearGradient>
+        <linearGradient
+          id="paint7_linear_327_86"
+          x1="2.89467e-08"
+          y1="14.1255"
+          x2="3.88517"
+          y2="14.1255"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0.221154" stopColor="#FF4B2F" />
+          <stop offset="0.805818" stopColor="#FF9148" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+};

@@ -6,9 +6,10 @@ import { useEffect, useRef, useState } from "react";
 
 import { LocaleType } from "@/src/types/LocaleTypes";
 
-import { ProjectsDataType } from "../assets/projectsData";
-import { IconArrow } from "../shared/icons/IconArrow";
-import { MaskLink } from "../shared/MaskLink";
+import { ProjectsDataType } from "../../assets/projectsData";
+import { IconArrow } from "../../shared/icons/IconArrow";
+import { IconBullet } from "../../shared/icons/IconBullet";
+import { MaskLink } from "../../shared/MaskLink";
 
 export const ProjectsList = ({
   list,
@@ -74,8 +75,8 @@ export const ProjectsList = ({
 
   return (
     <div className="mb-26.5 px-4">
-      <h2 className="text-grey88 mb-11 flex gap-3 leading-[130%] font-medium tracking-[1.4px] uppercase">
-        <span aria-hidden="true" className="bg-whiteff block h-3.5 w-3.5 shrink-0" />
+      <h2 className="text-grey88 mb-11 flex gap-2 leading-[130%] font-medium tracking-[1.4px] uppercase">
+        <IconBullet className="h-3.5 w-3.5" />
         {t("ourProjects", { year: new Date().getFullYear() })}
       </h2>
       <ul className="flex w-full flex-col gap-3">

@@ -9,6 +9,25 @@
     "projectDetails": "Project details",
     "offerTitle": "Premium design and precise code \nfor brands that value quality",
     "offerText1": "<grey>we</grey> offer <grey>only</grey> custom solutions",
-    "offerText2": "that will ensure high-quality growth of your business"
+    "offerText2": "that will ensure high-quality growth of your business",
+    "ourClientsTitle": "Our Clients",
+    "servicesTitle": "Services",
+    "service1": "Full-cycle website development",
+    "service2": "Website redesign",
+    "service3": "Website audit",
+    "service4": "UI/UX website design",
+    "service5": "Website functionality enhancement",
+    "service6": "CMS integration",
+    "service7": "Support and maintenance",
+    "service8": "Website migration (hosting / domain)",
+    "technTitle": "Technologies we use",
+    "teamTitle": "a highly aligned team",
+    "teamText1": "A designer",
+    "teamText2": "and developer duo",
+    "teamText3": "setting a new standard",
+    "teamProjects": "10+ projects together",
+    "teamYears": "3+ years of experience",
+    "dezName": "Iryna Stoliarova",
+    "devName": "Iryna Trynkal"
   }
 }

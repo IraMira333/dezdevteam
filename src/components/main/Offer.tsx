@@ -1,13 +1,13 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-import { CustomTitle } from "../shared/CustomTitle";
+import { CustomTitleH2 } from "../shared/CustomTitle";
 
 export const Offer = () => {
   const t = useTranslations("HomePage");
   return (
     <section className="bg-black0a casual-container relative min-h-screen min-w-screen overflow-hidden">
-      <CustomTitle text={t("offerTitle")} className="mt-6" />
+      <CustomTitleH2 text={t("offerTitle")} className="mt-6" />
 
       <div className="tab:justify-end absolute top-16 right-0 h-[calc(100vh-64px)]">
         <Image
