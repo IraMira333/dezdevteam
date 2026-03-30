@@ -6,7 +6,7 @@ export const devWhatsApp = "https://wa.me/380939449063";
 export type TeamMember = {
   photo: string;
   telegram: string;
-  whatsapp?: string;
+  whatsapp: string;
   media: string[];
   role: string;
   uk: { name: string };
