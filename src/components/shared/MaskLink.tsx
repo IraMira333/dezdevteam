@@ -1,16 +1,22 @@
+import clsx from "clsx";
+
 import { IconArrow } from "./icons/IconArrow";
 
 export const MaskLink = ({
   text,
   white,
   link,
+  className,
+  noArrow,
 }: {
   text: string;
   white?: boolean;
   link: string;
+  className?: string;
+  noArrow?: boolean;
 }) => {
   return (
-    <div className={`border-whitef0 relative h-11 w-47.5 overflow-hidden border`}>
+    <div className={clsx("border-whitef0 relative h-11 w-47.5 overflow-hidden border", className)}>
       <div className={`absolute inset-0 ${white ? "bg-black06" : "bg-whitef0"}`} />
 
       <span
@@ -18,7 +24,7 @@ export const MaskLink = ({
           white ? "text-whitef0" : "text-black06"
         }`}
       >
-        {text} <IconArrow className="ml-2 h-5 w-5 stroke-2" />
+        {text} {noArrow ? null : <IconArrow className="ml-2 h-5 w-5 stroke-2" />}
       </span>
 
       <a
@@ -29,7 +35,7 @@ export const MaskLink = ({
           white ? "mask-light text-black06" : "mask-dark text-whitef0"
         }`}
       >
-        {text} <IconArrow className="ml-2 h-5 w-5 stroke-2" />
+        {text} {noArrow ? null : <IconArrow className="ml-2 h-5 w-5 stroke-2" />}
       </a>
     </div>
   );

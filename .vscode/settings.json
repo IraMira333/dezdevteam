@@ -6,4 +6,5 @@
   },
   "eslint.validate": ["javascript", "typescript", "typescriptreact"],
   "eslint.experimental.useFlatConfig": true
+  // "tailwindCSS.lint.suggestCanonicalClasses": "ignore"
 }
