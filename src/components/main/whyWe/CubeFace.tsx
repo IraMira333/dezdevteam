@@ -1,9 +1,11 @@
+import React from "react";
+
 export const CubeFace = ({
   children,
   className,
   style,
 }: {
-  children?: string;
+  children?: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
 }) => {

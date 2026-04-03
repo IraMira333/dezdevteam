@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { IconSliderArrow } from "../../shared/icons/IconSliderArrow";
+import { CubeFace } from "./CubeFace";
 
 export const CubeSlider = ({ list }: { list: string[] }) => {
   const [index, setIndex] = useState(0);
@@ -48,7 +49,7 @@ export const CubeSlider = ({ list }: { list: string[] }) => {
             }}
           >
             {list.map((text, i) => (
-              <Face
+              <CubeFace
                 key={i}
                 className={`bg-whitef0 transition-colors duration-700 ease-in-out ${index === i ? "text-grey88" : "text-whitef0"} `}
                 style={{
@@ -57,10 +58,10 @@ export const CubeSlider = ({ list }: { list: string[] }) => {
               >
                 <p className="mb-4 text-right">{`{ 0${i + 1} }`}</p>
                 <p>{text}</p>
-              </Face>
+              </CubeFace>
             ))}
 
-            <Face
+            <CubeFace
               className="bg-[#74bc71]"
               style={{
                 width: "224px",
@@ -89,28 +90,6 @@ export const CubeSlider = ({ list }: { list: string[] }) => {
           <IconSliderArrow className="text-whiteff h-16 w-16" />
         </button>
       </div>
-    </div>
-  );
-};
-
-const Face = ({
-  children,
-  className,
-  style,
-}: {
-  children?: React.ReactNode;
-  className?: string;
-  style?: React.CSSProperties;
-}) => {
-  return (
-    <div
-      className={`absolute top-0 left-0 h-full w-full p-4 ${className}`}
-      style={{
-        ...style,
-        backfaceVisibility: "hidden",
-      }}
-    >
-      {children}
     </div>
   );
 };
