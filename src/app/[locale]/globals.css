@@ -11,6 +11,7 @@
   --color-whiteff: #ffffff;
   --color-grey88: #888888;
   --color-grey33: #333333;
+  --color-greyd9: #d9d9d9;
 
   /* 📱 Breakpoints */
   --breakpoint-tab: 768px;
@@ -26,6 +27,8 @@ body {
   background-color: var(--color-black03);
   color: var(--color-grey88);
   font-size: 14px;
+  letter-spacing: 0%;
+  line-height: 1.3;
 }
 
 button,
@@ -181,4 +184,19 @@ a {
   .nopadding-container {
     @apply tab:max-w-full pc:max-w-360 mx-auto w-full max-w-130;
   }
+}
+.perspective {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-x-180 {
+  transform: rotateX(180deg);
 }
