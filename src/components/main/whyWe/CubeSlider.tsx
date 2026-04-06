@@ -11,13 +11,11 @@ export const CubeSlider = ({ list }: { list: string[] }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [depth, setDepth] = useState(0);
   const [faceWidth, setFaceWidth] = useState(0);
-  console.log("🚀 ~ CubeSlider ~ faceWidth:", faceWidth);
-  console.log("🚀 ~ CubeSlider ~ depth:", depth);
 
   useEffect(() => {
     const updateDepth = () => {
       if (containerRef.current) {
-        setDepth(containerRef.current.offsetWidth / 4);
+        setDepth(containerRef.current.offsetHeight / 2);
         setFaceWidth(containerRef.current.offsetWidth);
       }
     };
@@ -31,9 +29,10 @@ export const CubeSlider = ({ list }: { list: string[] }) => {
     setIndex((prev) => (prev + 1) % list.length);
     setRotation((prev) => prev + 1);
   };
+
   return (
-    <div className="flex flex-col items-center gap-6">
-      <div ref={containerRef} className="h-56 w-[80%] max-w-90 perspective-[2000px]">
+    <div className="flex w-full flex-col items-center gap-6">
+      <div ref={containerRef} className="h-56 w-[80%] max-w-120 perspective-[2000px]">
         <div
           className="mx-auto h-full w-full"
           style={{
@@ -53,7 +52,7 @@ export const CubeSlider = ({ list }: { list: string[] }) => {
                 key={i}
                 className={`bg-whitef0 transition-colors duration-700 ease-in-out ${index === i ? "text-grey88" : "text-whitef0"} `}
                 style={{
-                  transform: `rotateX(${i * 90}deg) translateZ(112px)`,
+                  transform: `rotateX(${i * 90}deg) translateZ(${depth}px)`,
                 }}
               >
                 <p className="mb-4 text-right">{`{ 0${i + 1} }`}</p>
@@ -64,9 +63,15 @@ export const CubeSlider = ({ list }: { list: string[] }) => {
             <CubeFace
               className="bg-[#74bc71]"
               style={{
-                width: "224px",
-                height: "224px",
-                transform: `rotateY(90deg) translateZ(187px)`,
+                width: `${depth * 2}px`,
+                height: `${depth * 2}px`,
+                top: "50%",
+                left: "50%",
+                right: "auto",
+                bottom: "auto",
+                marginTop: `-${depth}px`,
+                marginLeft: `-${depth}px`,
+                transform: `rotateY(90deg) translateZ(${faceWidth / 2}px)`,
               }}
             />
           </div>
