@@ -86,3 +86,65 @@ export const cubeList = {
     ],
   },
 };
+
+export type HowWeWorkType = {
+  title: string;
+  description: string;
+};
+
+export const howWeWorkList: { uk: HowWeWorkType[]; en: HowWeWorkType[] } = {
+  uk: [
+    {
+      title: "Ознайомча зустріч",
+      description:
+        "Збір інформації по цілям і задачам бізнесу, наявним матеріалам, очікувань по термінам.",
+    },
+    {
+      title: "Стратегія та дослідження",
+      description:
+        "Ми починаємо з розробки індивідуальних стратегій та проведення глибоких досліджень для виявлення важливих інсайтів. Це створює надійний план дій для досягнення значних, вимірюваних результатів.",
+    },
+    {
+      title: "Дизайн і прототип",
+      description:
+        "Ми перетворюємо ідеї на привабливі дизайни та функціональні прототипи, які втілюють вашу візію в життя. Такий підхід забезпечує безперебійну співпрацю та ранню валідацію.",
+    },
+    {
+      title: "розробка, тестування та оптимізація",
+      description:
+        "Ми розробляємо надійні рішення, проводимо ретельне тестування та налагоджуємо роботу для досягнення максимальної продуктивності. ",
+    },
+    {
+      title: "Запуск проєкту та підтримка",
+      description:
+        "Ми запускаємо проект з точністю і надаємо постійну підтримку, щоб допомогти вашому продукту розвиватися. Завдяки глибокому розумінню ваших цілей і користувачів, ми забезпечуємо швидкі і тривалі результати.",
+    },
+  ],
+  en: [
+    {
+      title: "Discovery Meeting",
+      description:
+        "We gather information about your business goals and objectives, existing materials, and expectations regarding timelines.",
+    },
+    {
+      title: "Strategy & Research",
+      description:
+        "We start by developing tailored strategies and conducting in-depth research to uncover key insights. This creates a solid action plan for achieving meaningful, measurable results.",
+    },
+    {
+      title: "Design & Prototyping",
+      description:
+        "We transform ideas into engaging designs and functional prototypes that bring your vision to life. This approach ensures smooth collaboration and early validation.",
+    },
+    {
+      title: "Development, Testing & Optimization",
+      description:
+        "We build robust solutions, conduct thorough testing, and fine-tune performance to ensure optimal results.",
+    },
+    {
+      title: "Launch & Support",
+      description:
+        "We launch your project with precision and provide ongoing support to help your product grow. With a deep understanding of your goals and users, we deliver fast and long-lasting results.",
+    },
+  ],
+};
