@@ -2,7 +2,7 @@
 import { EmblaCarouselType } from "embla-carousel";
 import React, { PropsWithChildren, useCallback, useEffect, useState } from "react";
 
-import { IconArrow } from "../icons/IconArrow";
+import { IconChevron } from "../icons/IconChevron";
 
 type UsePrevNextButtonsType = {
   prevBtnDisabled: boolean;
@@ -66,37 +66,33 @@ type ButtonType = PropsWithChildren<
 };
 
 export const PrevButton: React.FC<ButtonType> = (props) => {
-  const { disabled, black = false, ...restProps } = props;
+  const { disabled, ...restProps } = props;
 
   return (
     <button
       disabled={disabled}
       aria-label="show previous slide button"
-      className={`embla__button--prev group tab:h-11 tab:border tab:w-11 relative flex h-6 w-6 rotate-180 items-center justify-center rounded transition-colors duration-300 ease-in-out hover:border-black hover:bg-black active:border-black active:bg-black disabled:pointer-events-none disabled:opacity-60 ${black ? "border-black" : "bg-white-100/10 border-ivory"}`}
+      className={`group disabled:text-grey88 hover:text-grey88 active:text-whiteff text-whiteff flex justify-center transition-colors duration-300 ease-in-out disabled:pointer-events-none`}
       type="button"
       {...restProps}
     >
-      <IconArrow
-        className={` ${black ? "group-hover:text-ivory group-active:text-ivory text-black" : "text-ivory"}`}
-      />
+      <IconChevron className={`shrink-0`} />
     </button>
   );
 };
 
 export const NextButton: React.FC<ButtonType> = (props) => {
-  const { disabled, black = false, ...restProps } = props;
+  const { disabled, ...restProps } = props;
 
   return (
     <button
       disabled={disabled}
       aria-label="show next slide button"
-      className={`embla__button--prev group tab:h-11 tab:border tab:w-11 relative flex h-6 w-6 items-center justify-center rounded-sm transition-colors duration-300 ease-in-out hover:border hover:border-black hover:bg-black active:border active:border-black active:bg-black disabled:pointer-events-none disabled:opacity-60 ${black ? "border-black" : "bg-white-100/10 border-ivory"}`}
+      className={`group disabled:text-grey88 hover:text-grey88 active:text-whiteff text-whiteff flex rotate-180 items-baseline justify-center transition-colors duration-300 ease-in-out disabled:pointer-events-none`}
       type="button"
       {...restProps}
     >
-      <IconArrow
-        className={` ${black ? "group-hover:text-ivory group-active:text-ivory text-black" : "text-ivory"}`}
-      />
+      <IconChevron className={`shrink-0`} />
     </button>
   );
 };

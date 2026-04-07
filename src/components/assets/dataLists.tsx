@@ -1,3 +1,9 @@
+import { IconStage1 } from "../shared/icons/IconStage1";
+import { IconStage2 } from "../shared/icons/IconStage2";
+import { IconStage3 } from "../shared/icons/IconStage3";
+import { IconStage4 } from "../shared/icons/IconStage4";
+import { IconStage5 } from "../shared/icons/IconStage5";
+
 export type WeDoType = {
   title: string;
   forWhom: string | string[];
@@ -90,32 +96,38 @@ export const cubeList = {
 export type HowWeWorkType = {
   title: string;
   description: string;
+  icon: React.ReactNode;
 };
 
 export const howWeWorkList: { uk: HowWeWorkType[]; en: HowWeWorkType[] } = {
   uk: [
     {
       title: "Ознайомча зустріч",
+      icon: <IconStage1 />,
       description:
         "Збір інформації по цілям і задачам бізнесу, наявним матеріалам, очікувань по термінам.",
     },
     {
       title: "Стратегія та дослідження",
+      icon: <IconStage2 />,
       description:
         "Ми починаємо з розробки індивідуальних стратегій та проведення глибоких досліджень для виявлення важливих інсайтів. Це створює надійний план дій для досягнення значних, вимірюваних результатів.",
     },
     {
       title: "Дизайн і прототип",
+      icon: <IconStage3 />,
       description:
         "Ми перетворюємо ідеї на привабливі дизайни та функціональні прототипи, які втілюють вашу візію в життя. Такий підхід забезпечує безперебійну співпрацю та ранню валідацію.",
     },
     {
       title: "розробка, тестування та оптимізація",
+      icon: <IconStage4 />,
       description:
         "Ми розробляємо надійні рішення, проводимо ретельне тестування та налагоджуємо роботу для досягнення максимальної продуктивності. ",
     },
     {
       title: "Запуск проєкту та підтримка",
+      icon: <IconStage5 />,
       description:
         "Ми запускаємо проект з точністю і надаємо постійну підтримку, щоб допомогти вашому продукту розвиватися. Завдяки глибокому розумінню ваших цілей і користувачів, ми забезпечуємо швидкі і тривалі результати.",
     },
@@ -123,26 +135,31 @@ export const howWeWorkList: { uk: HowWeWorkType[]; en: HowWeWorkType[] } = {
   en: [
     {
       title: "Discovery Meeting",
+      icon: <IconStage1 />,
       description:
         "We gather information about your business goals and objectives, existing materials, and expectations regarding timelines.",
     },
     {
       title: "Strategy & Research",
+      icon: <IconStage2 />,
       description:
         "We start by developing tailored strategies and conducting in-depth research to uncover key insights. This creates a solid action plan for achieving meaningful, measurable results.",
     },
     {
       title: "Design & Prototyping",
+      icon: <IconStage3 />,
       description:
         "We transform ideas into engaging designs and functional prototypes that bring your vision to life. This approach ensures smooth collaboration and early validation.",
     },
     {
       title: "Development, Testing & Optimization",
+      icon: <IconStage4 />,
       description:
         "We build robust solutions, conduct thorough testing, and fine-tune performance to ensure optimal results.",
     },
     {
       title: "Launch & Support",
+      icon: <IconStage5 />,
       description:
         "We launch your project with precision and provide ongoing support to help your product grow. With a deep understanding of your goals and users, we deliver fast and long-lasting results.",
     },

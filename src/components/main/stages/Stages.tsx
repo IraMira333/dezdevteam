@@ -15,7 +15,10 @@ export const Stages = () => {
       <h2 className="text-center text-5xl leading-[90%] font-medium tracking-[-6.44px] uppercase">
         {t("howWeWorkTitle")}
       </h2>
-      <StagesSlider list={howWeWorkList[locale as LocaleType]} />
+      <StagesSlider
+        list={howWeWorkList[locale as LocaleType]}
+        className="mt-14 ml-[calc(50%-156px)]"
+      />
     </section>
   );
 };
