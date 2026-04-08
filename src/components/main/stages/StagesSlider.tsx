@@ -4,10 +4,17 @@ import useEmblaCarousel from "embla-carousel-react";
 
 import { HowWeWorkType } from "../../assets/dataLists";
 import { NextButton, PrevButton, usePrevNextButtons } from "../../shared/slider/CarouselButtons";
+import { StageCard } from "./StageCard";
 
-export const StagesSlider = ({ list }: { list: HowWeWorkType[] }) => {
+export const StagesSlider = ({
+  list,
+  className,
+}: {
+  list: HowWeWorkType[];
+  className?: string;
+}) => {
   const options: EmblaOptionsType = {
-    loop: true,
+    loop: false,
     align: "start",
   };
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
@@ -15,21 +22,20 @@ export const StagesSlider = ({ list }: { list: HowWeWorkType[] }) => {
     usePrevNextButtons(emblaApi);
 
   return (
-    <div className="embla tab:hidden mb-8 min-w-full px-0">
+    <div className={`mb-8 min-w-full px-0 ${className}`}>
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
           {list.map((content, ind) => (
-            <div key={ind} className="embla__slide flex-[0_0_100%] px-0.5">
-              {content.title}
+            <div key={ind} className="">
+              <StageCard data={content} />
             </div>
           ))}
         </div>
-        <div className="embla__controls tab:absolute tab:bottom-0 pc:bottom-3.5 tab:right-0 mt-4">
-          <div className="embla__buttons mx-auto flex max-w-75 justify-between gap-4 text-black">
-            <PrevButton black onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
 
-            <NextButton black onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-          </div>
+        <div className="text-whiteff relative mx-auto mt-4 flex h-22 w-37 justify-between gap-4 p-2">
+          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
+          <div className="bg-whiteff/50 absolute top-1/2 left-1/2 h-0.5 w-24 -translate-x-1/2 rotate-[-70deg]" />
+          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
         </div>
       </div>
     </div>

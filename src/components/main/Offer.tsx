@@ -6,7 +6,7 @@ import { CustomTitleH2 } from "../shared/CustomTitle";
 export const Offer = () => {
   const t = useTranslations("HomePage");
   return (
-    <section className="bg-black0a casual-container relative min-h-screen min-w-screen overflow-hidden">
+    <section className="bg-black0a casual-container relative min-h-[calc(100vh-77px)] min-w-screen overflow-hidden">
       <CustomTitleH2 text={t("offerTitle")} className="mt-6" />
 
       <div className="tab:justify-end absolute top-16 right-0 h-[calc(100vh-64px)]">
@@ -15,7 +15,7 @@ export const Offer = () => {
           alt="background image"
           width={675}
           height={980}
-          className="h-full w-auto object-cover object-center"
+          className="h-full w-auto object-contain object-center"
         />
       </div>
 
