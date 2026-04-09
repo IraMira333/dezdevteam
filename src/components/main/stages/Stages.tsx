@@ -10,7 +10,7 @@ export const Stages = () => {
   const t = useTranslations("HomePage");
   const locale = useLocale();
   return (
-    <section className="casual-container relative min-h-[calc(100vh-77px)] bg-[url('/bgimages/bg-process.png')] bg-cover bg-center py-14">
+    <section className="relative min-h-[calc(100vh-77px)] overflow-hidden bg-[url('/bgimages/bg-process.png')] bg-cover bg-center py-14">
       <Subtitle text={t("howWeWorkSubtitle")} className="mr-0 mb-16 ml-auto w-fit" />
       <h2 className="text-center text-5xl leading-[90%] font-medium tracking-[-6.44px] uppercase">
         {t("howWeWorkTitle")}
