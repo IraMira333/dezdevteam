@@ -16,15 +16,16 @@ export const StagesSlider = ({
   const options: EmblaOptionsType = {
     loop: false,
     align: "start",
+    containScroll: "trimSnaps",
   };
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const { prevBtnDisabled, nextBtnDisabled, onPrevButtonClick, onNextButtonClick } =
     usePrevNextButtons(emblaApi);
 
   return (
-    <div className={`mb-8 min-w-full px-0 ${className}`}>
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex">
+    <div className={`mb-8 min-w-75 overflow-hidden px-0 ${className}`}>
+      <div className="" ref={emblaRef}>
+        <div className="flex w-75">
           {list.map((content, ind) => (
             <div key={ind} className="">
               <StageCard data={content} />
