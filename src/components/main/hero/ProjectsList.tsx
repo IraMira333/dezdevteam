@@ -19,7 +19,6 @@ export const ProjectsList = ({
 }) => {
   const t = useTranslations("HomePage");
   const [activeIndex, setActiveIndex] = useState(0);
-  const lastIndexRef = useRef(0);
   const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
 
   useEffect(() => {
@@ -27,41 +26,23 @@ export const ProjectsList = ({
 
     const handleScroll = () => {
       if (ticking) return;
-
       ticking = true;
 
       requestAnimationFrame(() => {
-        const center = window.innerHeight / 2;
-
-        let closestDistance = Infinity;
-        let closestIndex = activeIndex;
-        const DEAD_ZONE = 140;
+        const triggerLine = window.innerHeight * 0.35;
+        let newIndex = 0;
 
         itemRefs.current.forEach((el, index) => {
           if (!el) return;
 
           const rect = el.getBoundingClientRect();
-          const elCenter = rect.top + rect.height / 2;
 
-          const distance = Math.abs(center - elCenter);
-          if (distance < DEAD_ZONE) {
-            closestIndex = index;
-            closestDistance = 0;
-            return;
-          }
-          if (distance < closestDistance) {
-            closestDistance = distance;
-            closestIndex = index;
+          if (rect.top <= triggerLine) {
+            newIndex = index;
           }
         });
 
-        if (closestIndex !== lastIndexRef.current) {
-          lastIndexRef.current = closestIndex;
-
-          setTimeout(() => {
-            setActiveIndex(closestIndex);
-          }, 120);
-        }
+        setActiveIndex(newIndex);
         ticking = false;
       });
     };
@@ -138,7 +119,7 @@ export const ProjectsList = ({
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: 20 }}
-                        className="mt-3 flex flex-wrap gap-2"
+                        className="mt-3 flex flex-wrap gap-1"
                       >
                         {project[locale].details.map((d) => (
                           <li key={d} className="border-grey33 w-fit rounded-md border px-2 py-1">

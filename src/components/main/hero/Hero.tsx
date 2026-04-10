@@ -23,7 +23,7 @@ export const Hero = () => {
             {t("text")}
           </p>
         </div>
-        <div className="tab:w-[56%] tab:max-w-[627px] tab:mb-0 relative mx-auto mb-26.5 w-fit">
+        <div className="tab:w-[56%] tab:max-w-157 tab:mb-0 relative mx-auto mb-26.5 w-fit">
           <Image
             src={newestProjectData.image}
             alt={newestProjectData[locale as LocaleType].title}
