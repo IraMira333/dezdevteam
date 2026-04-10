@@ -15,13 +15,9 @@ export const FooterLight = () => {
   };
 
   return (
-    <div
-      onMouseMove={handleMouseMove}
-      className="bg-black05 relative h-[400px] w-full overflow-hidden"
-    >
-      {/* 🔥 LIGHT EFFECT */}
+    <div onMouseMove={handleMouseMove} className="bg-black05 relative h-100 w-full overflow-hidden">
       <div
-        className="pointer-events-none absolute inset-0 z-[1] transition duration-100"
+        className="pointer-events-none absolute inset-0 z-1 transition duration-100"
         style={{
           background: `radial-gradient(
             220px circle at ${pos.x}px ${pos.y}px,
@@ -31,7 +27,6 @@ export const FooterLight = () => {
         }}
       />
 
-      {/* 💡 LAMP */}
       <Image
         src="/images/lamp.png"
         alt="lamp"

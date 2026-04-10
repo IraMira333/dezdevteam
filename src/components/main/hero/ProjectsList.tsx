@@ -7,7 +7,6 @@ import { useEffect, useRef, useState } from "react";
 import { LocaleType } from "@/src/types/LocaleTypes";
 
 import { ProjectsDataType } from "../../assets/projectsData";
-import { IconArrow } from "../../shared/icons/IconArrow";
 import { IconBullet } from "../../shared/icons/IconBullet";
 import { MaskLink } from "../../shared/MaskLink";
 
@@ -34,8 +33,8 @@ export const ProjectsList = ({
       requestAnimationFrame(() => {
         const center = window.innerHeight / 2;
 
-        let closestIndex = 0;
         let closestDistance = Infinity;
+        let closestIndex = activeIndex;
         const DEAD_ZONE = 140;
 
         itemRefs.current.forEach((el, index) => {
@@ -79,7 +78,7 @@ export const ProjectsList = ({
         <IconBullet className="h-3.5 w-3.5" />
         {t("ourProjects", { year: new Date().getFullYear() })}
       </h2>
-      <ul className="flex w-full flex-col gap-3">
+      <ul className="flex w-full flex-col gap-6">
         {list.map((project, index) => {
           const isActive = index === activeIndex;
 
@@ -91,86 +90,66 @@ export const ProjectsList = ({
               }}
               layout
               transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-              className="bg-black06 flex min-h-42.5 min-w-full flex-col gap-4 p-3"
+              className="flex min-w-full flex-col gap-4 rounded-xl bg-linear-to-r from-[#FF4B2F] to-[#FF9148] pt-1 pb-px"
             >
-              <AnimatePresence initial={false}>
-                {isActive && (
-                  <motion.div
-                    key="image"
-                    initial={{ opacity: 0, scale: 0.98 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.98 }}
-                    transition={{ duration: 0.4 }}
-                    className="relative overflow-hidden"
-                  >
-                    <div className="relative mx-auto aspect-326/242 h-auto w-full max-w-111">
-                      <Image
-                        src={project.image}
-                        alt={project[locale].title}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-
-              <div className="flex items-center justify-between gap-4">
-                <h3 className="text-whitef0 text-2xl leading-[120%] font-medium">
-                  {project[locale].title}
-                </h3>
-                <p>{project.year}</p>
-              </div>
-
-              <div className="flex justify-between gap-4">
-                <motion.p
-                  layout
-                  className="text-base leading-[130%]"
-                  transition={{ duration: 0.4 }}
-                  animate={{
-                    width: isActive ? "58.5%" : "100%",
-                  }}
-                >
-                  {project[locale].services}
-                </motion.p>
-
-                <AnimatePresence>
+              <div className="bg-black06 rounded-xl p-3">
+                <AnimatePresence initial={false}>
                   {isActive && (
-                    <motion.ul
-                      key="details"
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: 20 }}
-                      className="flex w-[40%] flex-col gap-1 text-right"
+                    <motion.div
+                      key="image"
+                      initial={{ opacity: 0, scale: 0.98 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.98 }}
+                      transition={{ duration: 0.4 }}
+                      className="relative overflow-hidden"
                     >
-                      {project[locale].details.map((d) => (
-                        <li
-                          key={d}
-                          className="border-grey33 ml-auto w-fit rounded-md border px-2 py-1"
-                        >
-                          {d}
-                        </li>
-                      ))}
-                    </motion.ul>
+                      <div className="relative mx-auto mb-4 aspect-326/242 h-auto w-full max-w-111">
+                        <Image
+                          src={project.image}
+                          alt={project[locale].title}
+                          fill
+                          className="object-cover"
+                        />
+                        <div className="absolute top-1 right-1">
+                          <MaskLink
+                            link={project.link}
+                            className="flex w-11! items-center justify-center"
+                          />
+                        </div>
+                      </div>
+                    </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
 
-              <motion.div transition={{ duration: 0.3 }}>
-                {isActive ? (
-                  <MaskLink text={t("projectDetails")} link={project.link} white />
-                ) : (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-whiteff flex w-fit items-center py-3 text-sm font-bold uppercase underline"
-                  >
-                    {t("projectDetails")}
-                    <IconArrow className="ml-2 h-5 w-5 stroke-2" />
-                  </a>
-                )}
-              </motion.div>
+                <div className="mb-3 flex items-center justify-between gap-4">
+                  <h3 className="text-whitef0 text-2xl leading-[120%] font-medium">
+                    {project[locale].title}
+                  </h3>
+                  <p>{project.year}</p>
+                </div>
+
+                <div className="">
+                  <p className="text-base leading-[130%]">{project[locale].services}</p>
+
+                  <AnimatePresence>
+                    {isActive && (
+                      <motion.ul
+                        key="details"
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 20 }}
+                        className="mt-3 flex flex-wrap gap-2"
+                      >
+                        {project[locale].details.map((d) => (
+                          <li key={d} className="border-grey33 w-fit rounded-md border px-2 py-1">
+                            {d}
+                          </li>
+                        ))}
+                      </motion.ul>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </div>
             </motion.li>
           );
         })}
