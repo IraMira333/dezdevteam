@@ -12,6 +12,7 @@
   --color-grey88: #888888;
   --color-grey33: #333333;
   --color-greyd9: #d9d9d9;
+  --color-accent: #ff4b2f;
 
   /* 📱 Breakpoints */
   --breakpoint-tab: 768px;
@@ -20,7 +21,6 @@
 
   /* 🪞 Тіні */
   --shadow-button: 4px 4px 0 0 var(--color-black);
-  --shadow-button-ivory: 4px 4px 0 0 var(--color-ivory);
 }
 
 body {
@@ -178,7 +178,7 @@ a {
 
 @layer components {
   .casual-container {
-    @apply tab:max-w-full tab:px-8 pc:max-w-360 pc:px-20 mx-auto w-full max-w-130 px-4;
+    @apply tab:max-w-full tab:px-8 prepc:px-10 pc:max-w-360 pc:px-20 mx-auto w-full max-w-130 px-4;
   }
 
   .nopadding-container {

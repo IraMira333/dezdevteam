@@ -15,15 +15,15 @@ export const Hero = () => {
   const projectsDataWithoutNewest = projectsData.slice(1);
 
   return (
-    <section className="nopadding-container mt-14">
-      <div className="tab:flex tab:px-6 tab:mb-16 tab:justify-between prepc:min-h-[calc(100vh-77px)]">
+    <section className="nopadding-container tab:px-6 prepc:px-10 pc:px-20 mt-14">
+      <div className="tab:flex tab:mb-16 prepc:mt-20 pc:mt-26 tab:justify-between">
         <div className="tab:flex tab:px-0 tab:w-[43%] tab:flex-col tab:justify-between tab:mb-0 mb-8 px-4">
           <CustomTitleH1 text={t("title")} className="mb-10" />
           <p className="text-whitef0 text-[56px] leading-[90%] font-medium whitespace-pre-line uppercase">
             {t("text")}
           </p>
         </div>
-        <div className="tab:w-[56%] tab:max-w-157 tab:mb-0 relative mx-auto mb-26.5 w-fit">
+        <div className="tab:w-[56%] tab:max-w-157 tab:mb-0 tab:ml-auto tab:mr-0 relative mx-auto mb-26.5 w-fit">
           <Image
             src={newestProjectData.image}
             alt={newestProjectData[locale as LocaleType].title}
