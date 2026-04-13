@@ -46,7 +46,7 @@ export default async function LocaleLayout({
           <Background />
           <div className="flex min-h-screen flex-col">
             <Header />
-            <main className="mt-[77px] flex flex-[1_0_auto] flex-col">
+            <main className="mt-19.25 flex flex-[1_0_auto] flex-col">
               {children}
               {/* <Analytics /> */}
             </main>

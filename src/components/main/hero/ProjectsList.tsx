@@ -10,6 +10,7 @@ import { ProjectsDataType } from "../../assets/projectsData";
 import { IconArrow } from "../../shared/icons/IconArrow";
 import { IconBullet } from "../../shared/icons/IconBullet";
 import { MaskLink } from "../../shared/MaskLink";
+import { ProjectImage } from "./ProjectImage";
 
 export const ProjectsList = ({
   list,
@@ -20,7 +21,6 @@ export const ProjectsList = ({
 }) => {
   const t = useTranslations("HomePage");
   const [activeIndex, setActiveIndex] = useState(0);
-  const lastIndexRef = useRef(0);
   const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
 
   useEffect(() => {
@@ -28,41 +28,25 @@ export const ProjectsList = ({
 
     const handleScroll = () => {
       if (ticking) return;
-
       ticking = true;
 
       requestAnimationFrame(() => {
-        const center = window.innerHeight / 2;
+        const isTablet = window.innerWidth >= 768;
 
-        let closestIndex = 0;
-        let closestDistance = Infinity;
-        const DEAD_ZONE = 140;
+        const triggerLine = isTablet ? 220 : window.innerHeight * 0.35;
+        let newIndex = 0;
 
         itemRefs.current.forEach((el, index) => {
           if (!el) return;
 
           const rect = el.getBoundingClientRect();
-          const elCenter = rect.top + rect.height / 2;
 
-          const distance = Math.abs(center - elCenter);
-          if (distance < DEAD_ZONE) {
-            closestIndex = index;
-            closestDistance = 0;
-            return;
-          }
-          if (distance < closestDistance) {
-            closestDistance = distance;
-            closestIndex = index;
+          if (rect.top <= triggerLine) {
+            newIndex = index;
           }
         });
 
-        if (closestIndex !== lastIndexRef.current) {
-          lastIndexRef.current = closestIndex;
-
-          setTimeout(() => {
-            setActiveIndex(closestIndex);
-          }, 120);
-        }
+        setActiveIndex(newIndex);
         ticking = false;
       });
     };
@@ -72,109 +56,100 @@ export const ProjectsList = ({
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  const activeProject = list[activeIndex];
 
   return (
-    <div className="mb-26.5 px-4">
-      <h2 className="text-grey88 mb-11 flex gap-2 leading-[130%] font-medium tracking-[1.4px] uppercase">
-        <IconBullet className="h-3.5 w-3.5" />
-        {t("ourProjects", { year: new Date().getFullYear() })}
-      </h2>
-      <ul className="flex w-full flex-col gap-3">
-        {list.map((project, index) => {
-          const isActive = index === activeIndex;
+    <div className="tab:flex tab:justify-between tab:pl-6 pc:pl-20">
+      <ProjectImage title={activeProject.en.title} image={activeProject.image} />
+      <div className="tab:w-[61%] tab:px-6 pc:pr-20 tab:mb-28 relative mb-26.5 px-4">
+        <h2 className="text-grey88 mb-11 flex gap-2 leading-[130%] font-medium tracking-[1.4px] uppercase">
+          <IconBullet className="h-3.5 w-3.5" />
+          {t("ourProjects", { year: new Date().getFullYear() })}
+        </h2>
+        <ul className="flex w-full flex-col gap-6">
+          {list.map((project, index) => {
+            const isActive = index === activeIndex;
 
-          return (
-            <motion.li
-              key={project.id}
-              ref={(el) => {
-                itemRefs.current[index] = el;
-              }}
-              layout
-              transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-              className="bg-black06 flex min-h-42.5 min-w-full flex-col gap-4 p-3"
-            >
-              <AnimatePresence initial={false}>
-                {isActive && (
-                  <motion.div
-                    key="image"
-                    initial={{ opacity: 0, scale: 0.98 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.98 }}
-                    transition={{ duration: 0.4 }}
-                    className="relative overflow-hidden"
-                  >
-                    <div className="relative mx-auto aspect-326/242 h-auto w-full max-w-111">
-                      <Image
-                        src={project.image}
-                        alt={project[locale].title}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+            return (
+              <motion.li
+                key={project.id}
+                ref={(el) => {
+                  itemRefs.current[index] = el;
+                }}
+                layout
+                transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                className="flex min-w-full flex-col gap-4 rounded-xl bg-linear-to-r from-[#FF4B2F] to-[#FF9148] pt-1 pb-px"
+              >
+                <div className="bg-black06 tab:p-4 rounded-xl p-3">
+                  <AnimatePresence initial={false}>
+                    {isActive && (
+                      <motion.div
+                        key="image"
+                        initial={{ opacity: 0, scale: 0.98 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.98 }}
+                        transition={{ duration: 0.4 }}
+                        className="tab:hidden relative overflow-hidden"
+                      >
+                        <div className="relative mx-auto mb-4 aspect-326/242 h-auto w-full max-w-111">
+                          <Image
+                            src={project.image}
+                            alt={project[locale].title}
+                            fill
+                            className="object-cover"
+                          />
+                          <div className="absolute top-1 right-1">
+                            <MaskLink
+                              link={project.link}
+                              className="flex w-11! items-center justify-center"
+                            />
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
 
-              <div className="flex items-center justify-between gap-4">
-                <h3 className="text-whitef0 text-2xl leading-[120%] font-medium">
-                  {project[locale].title}
-                </h3>
-                <p>{project.year}</p>
-              </div>
+                  <div className="tab:flex-row-reverse mb-3 flex items-center justify-between gap-4">
+                    <IconArrow className={`tab:block hidden ${isActive ? "text-accent" : ""}`} />
+                    <h3 className="text-whitef0 text-2xl leading-[120%] font-medium">
+                      {project[locale].title}
+                    </h3>
+                    <p>{project.year}</p>
+                  </div>
 
-              <div className="flex justify-between gap-4">
-                <motion.p
-                  layout
-                  className="text-base leading-[130%]"
-                  transition={{ duration: 0.4 }}
-                  animate={{
-                    width: isActive ? "58.5%" : "100%",
-                  }}
-                >
-                  {project[locale].services}
-                </motion.p>
-
-                <AnimatePresence>
-                  {isActive && (
-                    <motion.ul
-                      key="details"
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: 20 }}
-                      className="flex w-[40%] flex-col gap-1 text-right"
-                    >
+                  <div className="">
+                    <p className="text-base leading-[130%]">{project[locale].services}</p>
+                    <ul className="tab:flex tab:gap-1 mt-4 hidden">
                       {project[locale].details.map((d) => (
-                        <li
-                          key={d}
-                          className="border-grey33 ml-auto w-fit rounded-md border px-2 py-1"
-                        >
+                        <li key={d} className="border-grey33 w-fit rounded-md border px-2 py-1">
                           {d}
                         </li>
                       ))}
-                    </motion.ul>
-                  )}
-                </AnimatePresence>
-              </div>
-
-              <motion.div transition={{ duration: 0.3 }}>
-                {isActive ? (
-                  <MaskLink text={t("projectDetails")} link={project.link} white />
-                ) : (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-whiteff flex w-fit items-center py-3 text-sm font-bold uppercase underline"
-                  >
-                    {t("projectDetails")}
-                    <IconArrow className="ml-2 h-5 w-5 stroke-2" />
-                  </a>
-                )}
-              </motion.div>
-            </motion.li>
-          );
-        })}
-      </ul>
+                    </ul>
+                    <AnimatePresence>
+                      {isActive && (
+                        <motion.ul
+                          key="details"
+                          initial={{ opacity: 0, x: 20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: 20 }}
+                          className="tab:hidden mt-3 flex flex-wrap gap-1"
+                        >
+                          {project[locale].details.map((d) => (
+                            <li key={d} className="border-grey33 w-fit rounded-md border px-2 py-1">
+                              {d}
+                            </li>
+                          ))}
+                        </motion.ul>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                </div>
+              </motion.li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 };
