@@ -19,6 +19,9 @@
   --breakpoint-prepc: 1260px;
   --breakpoint-pc: 1440px;
 
+  /* Розміри шрифтів */
+  --text-36: 36px;
+
   /* 🪞 Тіні */
   --shadow-button: 4px 4px 0 0 var(--color-black);
 }

@@ -8,7 +8,7 @@ import { SocialLink } from "../../shared/SocialLink";
 export const TeamCard = ({ data, locale }: { data: TeamMember; locale: LocaleType }) => {
   return (
     <div className="flex flex-col items-center gap-6 text-center">
-      <div className="aspect-square">
+      <div className="tab:max-w-64 prepc:max-w-80 aspect-square">
         <Image
           src={data.photo}
           alt={data[locale].name}
@@ -18,10 +18,12 @@ export const TeamCard = ({ data, locale }: { data: TeamMember; locale: LocaleTyp
         />
       </div>
       <div>
-        <h3 className="text-whiteff text-base leading-[150%] font-semibold tracking-[0%]">
+        <h3 className="text-whiteff tab:text-lg text-base leading-[150%] font-semibold tracking-[0%]">
           {data[locale].name}
         </h3>
-        <p className="mx-auto w-25 leading-[143%] tracking-[1.4px] uppercase">{data.role}</p>
+        <p className="tab:w-fit mx-auto w-25 leading-[143%] tracking-[1.4px] uppercase">
+          {data.role}
+        </p>
       </div>
       <div className="flex gap-3.5">
         {data.media.map((m) => (
