@@ -206,3 +206,29 @@ a {
     linear-gradient(0deg, rgba(217, 217, 217, 0), rgba(217, 217, 217, 0)),
     linear-gradient(90deg, #ff4b2f 21.36%, #ff9148 77.83%);
 }
+
+.gradient-slider-right {
+  background: linear-gradient(
+    180deg,
+    #050505 15.44%,
+    #050505 16.04%,
+    #060505 17.76%,
+    #070505 20.49%,
+    #0a0605 24.14%,
+    #0e0605 28.6%,
+    #150705 33.77%,
+    #1e0906 39.53%,
+    #2b0b06 45.79%,
+    #3b0d06 52.45%,
+    #4f1007 59.39%,
+    #671407 66.51%,
+    #841808 73.72%,
+    #a71e09 80.9%,
+    #cf2409 87.94%,
+    #fe2b0a 94.76%
+  );
+}
+.gradient-slider-face {
+  backdrop-filter: blur(10px);
+  /* background: #050505c2; */
+}

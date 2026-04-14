@@ -31,12 +31,15 @@ export const CubeSlider = ({ list }: { list: string[] }) => {
   };
 
   return (
-    <div className="flex w-full flex-col items-center gap-6">
-      <div ref={containerRef} className="h-56 w-[80%] max-w-120 perspective-[2000px]">
+    <div className="flex h-full w-full flex-col items-center justify-between gap-6">
+      <div
+        ref={containerRef}
+        className="tab:h-50 prepc:h-68 prepc:max-w-108 h-46 w-[80%] max-w-96 perspective-[2000px]"
+      >
         <div
           className="mx-auto h-full w-full"
           style={{
-            transform: "rotateX(-7deg) rotateY(-10deg)",
+            transform: "rotateX(-7deg) rotateY(-14deg)",
             transformStyle: "preserve-3d",
           }}
         >
@@ -50,18 +53,24 @@ export const CubeSlider = ({ list }: { list: string[] }) => {
             {list.map((text, i) => (
               <CubeFace
                 key={i}
-                className={`bg-whitef0 transition-colors duration-700 ease-in-out ${index === i ? "text-grey88" : "text-whitef0"} `}
+                className={`gradient-slider-face transition-colors duration-700 ease-in-out`}
                 style={{
                   transform: `rotateX(${i * 90}deg) translateZ(${depth}px)`,
                 }}
               >
-                <p className="mb-4 text-right">{`{ 0${i + 1} }`}</p>
-                <p>{text}</p>
+                <p
+                  className={`text-grey88 mb-4 text-right transition-opacity duration-700 ease-in-out ${index === i ? "opacity-100" : "opacity-0"} `}
+                >{`{ 0${i + 1} }`}</p>
+                <p
+                  className={`text-whitef0 tab:text-base transition-opacity duration-700 ease-in-out ${index === i ? "opacity-100" : "opacity-0"} `}
+                >
+                  {text}
+                </p>
               </CubeFace>
             ))}
 
             <CubeFace
-              className="bg-[#74bc71]"
+              className="gradient-slider-right"
               style={{
                 width: `${depth * 2}px`,
                 height: `${depth * 2}px`,
@@ -78,7 +87,7 @@ export const CubeSlider = ({ list }: { list: string[] }) => {
         </div>
       </div>
 
-      <div className="my-10 flex items-center gap-2">
+      <div className="mb-8 flex items-center gap-2">
         <div className="flex items-center gap-2">
           {list.map((_, i) => {
             const isActive = i === index;
