@@ -178,7 +178,7 @@ a {
 
 @layer components {
   .casual-container {
-    @apply tab:max-w-full tab:px-8 prepc:px-10 pc:max-w-360 pc:px-20 mx-auto w-full max-w-130 px-4;
+    @apply tab:max-w-full tab:px-8 prepc:px-10 pc:max-w-400 pc:px-20 mx-auto w-full max-w-130 px-4;
   }
 
   .nopadding-container {
@@ -199,4 +199,10 @@ a {
 
 .rotate-x-180 {
   transform: rotateX(180deg);
+}
+
+.gradient-orange {
+  background:
+    linear-gradient(0deg, rgba(217, 217, 217, 0), rgba(217, 217, 217, 0)),
+    linear-gradient(90deg, #ff4b2f 21.36%, #ff9148 77.83%);
 }
