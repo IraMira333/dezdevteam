@@ -28,31 +28,36 @@ export const StickySection = () => {
         {weDoList.map((card, index) => (
           <div
             key={card.en.title}
-            className={`tab:top-[var(--card-top)] prepc:top-[var(--card-top-pc)] tab:min-h-162.5 tab:h-[var(--tab-h)] prepc:h-[var(--pc-h)] sticky top-[var(--card-top-mob)] min-h-[var(--mob-h)] pt-0`}
+            className={`tab:h-[var(--h)] prepc:h-120 prepc:min-h-104 prepc:top-[var(--top-pc)] sticky top-[var(--top)] min-h-[var(--h)] pt-0`}
             style={
               {
-                "--mob-h": `calc(100vh - ${90 + index * 52}px)`,
-                "--tab-h": "calc(100vh - 56px)",
-                "--pc-h": "calc(100vh - 84px)",
-                "--card-top-mob": `${80 + index * 52}px`,
-                "--card-top": "56px",
-                "--card-top-pc": "84px",
+                "--h": `calc(100vh - ${90 + index * 52}px)`,
+                "--h-pc": `calc(100vh - ${120 + index * 52}px)`,
+                "--top": `${80 + index * 52}px`,
+                "--top-pc": `${120 + index * 52}px`,
+                "--left-gap": ` ${index * 25}%`,
               } as React.CSSProperties
             }
           >
             <StickyCard
               data={card[locale as LocaleType]}
-              className={`tab:w-[33.5%] tab:left-[var(--card-left)]`}
+              className={`tab:w-1/2 tab:left-[var(--left-gap)]`}
             />
           </div>
         ))}
       </div>
 
-      <div className="pt-18">
-        <p className="text-whitef0 mb-5 text-2xl leading-[100%] font-medium tracking-[0%] whitespace-pre-line uppercase">
+      <div className="tab:ml-[calc(50%-95px)] pt-18">
+        <p className="text-whitef0 tab:w-[80%] mb-5 text-2xl leading-[100%] font-medium tracking-[0%] whitespace-pre-line uppercase">
           {t("weDoEnd")}
         </p>
-        <MaskLink noArrow text={t("btnContactUs")} white link={dezTelegram} className="w-full" />
+        <MaskLink
+          noArrow
+          text={t("btnContactUs")}
+          white
+          link={dezTelegram}
+          className="tab:max-w-47.5 tab:mx-0 mx-auto w-full max-w-80"
+        />
       </div>
     </section>
   );
