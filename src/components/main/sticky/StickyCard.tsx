@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import { dezTelegram } from "../../assets/contacts";
 import { WeDoType } from "../../assets/dataLists";
 import { MaskLink } from "../../shared/MaskLink";
+import { MaskLinkInsite } from "../../shared/MaskLinkInsite";
 
 export const StickyCard = ({ data, className }: { data: WeDoType; className?: string }) => {
   const t = useTranslations("HomePage");
@@ -50,7 +51,7 @@ export const StickyCard = ({ data, className }: { data: WeDoType; className?: st
         </div>
         <div className="flex flex-col gap-3.5">
           <MaskLink noArrow white text={t("orderProject")} link={dezTelegram} className="w-full" />
-          <MaskLink noArrow text={t("weDone")} link="" className="w-full" />
+          <MaskLinkInsite noArrow text={t("weDone")} id="projects" className="w-full" />
         </div>
       </div>
     </>

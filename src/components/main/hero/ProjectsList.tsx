@@ -59,7 +59,7 @@ export const ProjectsList = ({
   const activeProject = list[activeIndex];
 
   return (
-    <div className="tab:flex tab:justify-between tab:pl-6 pc:pl-20">
+    <div id="projects" className="tab:flex tab:justify-between tab:pl-6 pc:pl-20">
       <ProjectImage title={activeProject.en.title} image={activeProject.image} />
       <div className="tab:w-[61%] tab:px-6 pc:pr-20 tab:mb-28 relative mb-26.5 px-4">
         <h2 className="text-grey88 mb-11 flex gap-2 leading-[130%] font-medium tracking-[1.4px] uppercase">

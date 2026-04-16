@@ -31,10 +31,10 @@ export const StickySection = () => {
             className={`tab:top-[var(--card-top)] prepc:top-[var(--card-top-pc)] tab:min-h-162.5 tab:h-[var(--tab-h)] prepc:h-[var(--pc-h)] sticky top-[var(--card-top-mob)] min-h-[var(--mob-h)] pt-0`}
             style={
               {
-                "--mob-h": `calc(100vh - ${32 + index * 52}px)`,
+                "--mob-h": `calc(100vh - ${90 + index * 52}px)`,
                 "--tab-h": "calc(100vh - 56px)",
                 "--pc-h": "calc(100vh - 84px)",
-                "--card-top-mob": `${28 + index * 52}px`,
+                "--card-top-mob": `${80 + index * 52}px`,
                 "--card-top": "56px",
                 "--card-top-pc": "84px",
               } as React.CSSProperties
