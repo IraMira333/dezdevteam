@@ -10,7 +10,7 @@ export const Stages = () => {
   const t = useTranslations("HomePage");
   const locale = useLocale();
   return (
-    <section className="tab:min-h-[calc(100vh-77px)] relative h-[calc(100vh-77px)] min-h-200 overflow-hidden bg-[url('/bgimages/bg-process.png')] bg-cover bg-center">
+    <section className="tab:min-h-[calc(100vh-77px)] relative mx-auto h-[calc(100vh-77px)] min-h-200 max-w-400 overflow-hidden bg-[url('/bgimages/bg-process.png')] bg-cover bg-center">
       <div className="casual-container tab:mt-16 tab:flex tab:flex-row-reverse tab:justify-between">
         <Subtitle
           text={t("howWeWorkSubtitle")}
