@@ -12,7 +12,7 @@ export const StickySection = () => {
   const locale = useLocale();
   const t = useTranslations("HomePage");
   return (
-    <section className="casual-container relative bg-[url('/bgimages/bg-wedev.jpg')] bg-cover bg-center pb-15">
+    <section className="casual-container prepc:pb-20 relative bg-[url('/bgimages/bg-wedev.jpg')] bg-cover bg-center pb-15">
       <div className="absolute inset-0 bg-[linear-gradient(180deg,#050505_16.25%,rgba(5,5,5,0)_100%)]" />
       <div className="relative z-10 mb-12 bg-[linear-gradient(180deg,#050505_16.25%,rgba(5,5,5,0)_100%)] py-4">
         <h2 className="text-whiteff mx-auto mb-6 w-50 text-center text-base leading-[130%] tracking-[0%] uppercase">
@@ -28,7 +28,7 @@ export const StickySection = () => {
         {weDoList.map((card, index) => (
           <div
             key={card.en.title}
-            className={`tab:h-[var(--h)] prepc:h-120 prepc:min-h-104 prepc:top-[var(--top-pc)] sticky top-[var(--top)] min-h-[var(--h)] pt-0`}
+            className={`tab:h-[var(--h)] prepc:min-h-104 prepc:top-[var(--top-pc)] sticky top-[var(--top)] min-h-[var(--h)] pt-0`}
             style={
               {
                 "--h": `calc(100vh - ${90 + index * 52}px)`,
