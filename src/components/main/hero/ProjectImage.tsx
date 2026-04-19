@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const ProjectImage = ({ image, title }: { image: string; title: string }) => {
   return (
-    <div className="tab:sticky tab:top-24 tab:block hidden aspect-[326/242] h-fit w-[38vw]">
+    <div className="tab:sticky tab:top-24 prepc:top-28 tab:block hidden aspect-[326/242] h-fit w-[38vw]">
       <AnimatePresence mode="wait">
         <motion.div
           key={title}

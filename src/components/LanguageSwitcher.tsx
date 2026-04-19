@@ -5,7 +5,7 @@ import { useLocale } from "next-intl";
 import { locales } from "../config";
 import { Link, usePathname } from "../i18n/navigation";
 
-export default function LanguageSwitcher() {
+export default function LanguageSwitcher({ className }: { className?: string }) {
   const locale = useLocale();
   const searchParams = useSearchParams();
   const pathName = usePathname();
@@ -13,7 +13,9 @@ export default function LanguageSwitcher() {
   const hash = typeof window !== "undefined" ? window.location.hash : "";
 
   return (
-    <ul className="pc:text-base relative z-10 flex gap-1 pb-1 leading-[100%] uppercase">
+    <ul
+      className={`pc:text-base relative z-10 flex gap-1 pb-1 leading-[100%] uppercase ${className}`}
+    >
       {locales.map((curLocale) => (
         <li
           key={curLocale}
@@ -28,11 +30,11 @@ export default function LanguageSwitcher() {
             replace
             locale={curLocale}
             scroll={false}
-            className={
+            className={`prepc:h-12 ${
               curLocale === locale
                 ? "text-whitef0 cursor-none! font-bold transition-all duration-250 ease-in-out"
                 : "text-grey88 hover:text-whiteff transition-all duration-250 ease-in-out"
-            }
+            }`}
           >
             {curLocale === "uk" ? "ua" : curLocale}
           </Link>
