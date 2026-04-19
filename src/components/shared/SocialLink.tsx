@@ -5,9 +5,10 @@ type Props = {
   url: string;
   className?: string;
   iconStyles?: string;
+  text?: string;
 };
 
-export const SocialLink = ({ url, className, iconStyles }: Props) => {
+export const SocialLink = ({ url, className, iconStyles, text }: Props) => {
   const type = getSocialType(url);
   const Icon = socialIconsMap[type];
 
@@ -20,7 +21,8 @@ export const SocialLink = ({ url, className, iconStyles }: Props) => {
       rel="noopener noreferrer"
       className={`flex items-center justify-center ${className}`}
     >
-      <Icon className={iconStyles} />
+      <Icon className={iconStyles} />{" "}
+      {text && <span className="ml-2 font-bold uppercase">{text}</span>}
     </a>
   );
 };
