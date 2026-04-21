@@ -1,3 +1,5 @@
+import { Fragment } from "react/jsx-runtime";
+
 import { teamData } from "../assets/contacts";
 import { SocialLink } from "../shared/SocialLink";
 
@@ -26,16 +28,15 @@ export const ContactMenu = ({
       } `}
     >
       {contactList.map((contact, inx) => (
-        <>
+        <Fragment key={contact.number}>
           <SocialLink
-            key={contact.number}
             url={contact.number}
             text={contact.name}
             className={`text-black06 flex h-11 items-center justify-center py-2.5 transition hover:scale-105`}
             iconStyles="w-5.5 h-auto"
           />
           {inx !== contactList.length - 1 && <div className="bg-black0a/20 mx-auto h-px w-30" />}
-        </>
+        </Fragment>
       ))}
     </div>
   );
