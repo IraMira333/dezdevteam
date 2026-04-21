@@ -1,10 +1,15 @@
 "use client";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
+
+import { footerContacts } from "../assets/contacts";
+import { IconArrow } from "../shared/icons/IconArrow";
+import { Subtitle } from "../shared/Subtitle";
 
 export const FooterLight = () => {
   const [pos, setPos] = useState({ x: 0, y: 0 });
-
+  const t = useTranslations("HomePage");
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
 
@@ -15,7 +20,10 @@ export const FooterLight = () => {
   };
 
   return (
-    <div onMouseMove={handleMouseMove} className="bg-black05 relative h-100 w-full overflow-hidden">
+    <div
+      onMouseMove={handleMouseMove}
+      className="bg-black05 relative min-h-100 w-full overflow-hidden"
+    >
       <div
         className="pointer-events-none absolute inset-0 z-1 transition duration-100"
         style={{
@@ -32,12 +40,38 @@ export const FooterLight = () => {
         alt="lamp"
         width={480}
         height={480}
-        className="pointer-events-none absolute top-1/2 left-1/2 w-80 -translate-x-1/2 -translate-y-1/2 opacity-80"
+        className="pointer-events-none absolute top-28 left-1/2 w-80 -translate-x-1/2 opacity-80"
       />
 
       {/* CONTENT */}
-      <div className="relative z-10 flex h-full items-center justify-center text-white">
-        Footer content
+      <div className="casual-container tab:pt-8 prepc:pt-16 pc:pt-25 relative z-10 h-full pt-6 text-white">
+        <Subtitle text={t("footerSubTitle")} className="mb-16" />
+        <div className="tab:flex tab:justify-between tab:mb-40 mb-12">
+          <div className="group tab:mb-0 tab:flex tab:gap-2 tab:w-fit mb-25 w-74">
+            <h2 className="tab:w-70 prepc:text-6xl pc:text-[64px] pc:w-96 prepc:w-90 tab:mb-0 mb-2 text-5xl leading-[90%] font-medium">
+              {t("footerTitle")}
+            </h2>
+            <IconArrow className="tab:group-hover:rotate-45 tab:h-20 tab:w-20 prepc:w-24 prepc:h-24 pc:w-32 pc:h-32 h-16 w-16 transition-transform duration-300 ease-in-out" />
+          </div>
+          <div className="">
+            <p className="text-grey88 mb-2 leading-[100%] uppercase">{t("footerMedia")}</p>
+            <ul className="flex flex-col gap-4">
+              {footerContacts.map((contact) => (
+                <li key={contact.media}>
+                  <a
+                    href={contact.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-whiteff hover:text-grey88 text-base leading-[150%] transition-all duration-300 ease-in-out hover:underline"
+                  >
+                    {contact.media}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className="bg-grey88 h-px w-full" />
       </div>
     </div>
   );

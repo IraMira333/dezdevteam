@@ -38,3 +38,10 @@ export const teamData: TeamMember[] = [
     en: { name: "Iryna Stoliarova" },
   },
 ];
+
+export const footerContacts = [
+  { media: "Instagram", url: "https://www.instagram.com/stoliarova_design/" },
+  { media: "Whatsapp", url: devWhatsApp },
+  { media: "LinkedIn", url: "https://linkedin.com/in/iryna-trynkal-41542311a" },
+  { media: "Behance", url: "https://www.behance.net/iryna_stoliarova" },
+];

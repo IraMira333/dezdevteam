@@ -78,7 +78,7 @@ export const ProjectsList = ({
                 }}
                 layout
                 transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-                className="flex min-w-full flex-col gap-4 rounded-xl bg-linear-to-r from-[#FF4B2F] to-[#FF9148] pt-1 pb-px"
+                className={`flex min-w-full flex-col gap-4 rounded-xl bg-linear-to-r from-[#FF4B2F] to-[#FF9148] pt-1 pb-px ${isActive ? "bg-linear-to-r from-[#FF4B2F] to-[#FF9148]" : "from-grey88 to-greyd9 bg-linear-to-r"}`}
               >
                 <div className="bg-black06 tab:p-4 rounded-xl p-3">
                   <AnimatePresence initial={false}>
