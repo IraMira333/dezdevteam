@@ -53,19 +53,26 @@ export const CubeSlider = ({ list }: { list: string[] }) => {
             {list.map((text, i) => (
               <CubeFace
                 key={i}
-                className={`gradient-slider-face flex flex-col justify-between transition-colors duration-700 ease-in-out`}
+                className="gradient-slider-face flex flex-col justify-between"
                 style={{
                   transform: `rotateX(${i * 90}deg) translateZ(${depth}px)`,
                 }}
               >
-                <p
-                  className={`text-grey88 mb-4 text-right transition-opacity duration-700 ease-in-out ${index === i ? "opacity-100" : "opacity-0"} `}
-                >{`{ 0${i + 1} }`}</p>
-                <p
-                  className={`text-whitef0 tab:text-base w-[90%] transition-opacity duration-700 ease-in-out ${index === i ? "opacity-100" : "opacity-0"} `}
+                <div
+                  style={{
+                    transform: `rotateZ(-1deg)`,
+                  }}
+                  className="flex h-full flex-col justify-between"
                 >
-                  {text}
-                </p>
+                  <p
+                    className={`text-grey88 mb-4 text-right transition-opacity duration-700 ease-in-out ${index === i ? "opacity-100" : "opacity-0"} `}
+                  >{`{ 0${i + 1} }`}</p>
+                  <p
+                    className={`text-whitef0 tab:text-base w-[90%] transition-opacity duration-700 ease-in-out ${index === i ? "opacity-100" : "opacity-0"} `}
+                  >
+                    {text}
+                  </p>
+                </div>
               </CubeFace>
             ))}
 
