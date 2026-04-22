@@ -12,9 +12,9 @@ export const StickySection = () => {
   const locale = useLocale();
   const t = useTranslations("HomePage");
   return (
-    <section className="casual-container prepc:pb-20 relative bg-[url('/bgimages/bg-wedev.jpg')] bg-cover bg-center pb-15">
+    <section className="relative bg-[url('/bgimages/bg-wedo.jpg')] bg-cover bg-position-[center_400px]">
       <div className="absolute inset-0 bg-[linear-gradient(180deg,#050505_16.25%,rgba(5,5,5,0)_100%)]" />
-      <div className="relative z-10 mb-12 bg-[linear-gradient(180deg,#050505_16.25%,rgba(5,5,5,0)_100%)] py-4">
+      <div className="casual-container relative z-10 mb-12 py-4">
         <h2 className="text-whiteff mx-auto mb-6 w-50 text-center text-base leading-[130%] tracking-[0%] uppercase">
           {t("weDoTitle")}
         </h2>
@@ -24,7 +24,7 @@ export const StickySection = () => {
         <Subtitle text={t("weDoSubtitle")} />
       </div>
 
-      <div className="relative">
+      <div className="casual-container relative">
         {weDoList.map((card, index) => (
           <div
             key={card.en.title}
@@ -47,17 +47,19 @@ export const StickySection = () => {
         ))}
       </div>
 
-      <div className="tab:ml-[calc(50%-95px)] pt-18">
-        <p className="text-whitef0 tab:w-[80%] mb-5 text-2xl leading-[100%] font-medium tracking-[0%] whitespace-pre-line uppercase">
-          {t("weDoEnd")}
-        </p>
-        <MaskLink
-          noArrow
-          text={t("btnContactUs")}
-          white
-          link={dezTelegram}
-          className="tab:max-w-47.5 tab:mx-0 mx-auto w-full max-w-80"
-        />
+      <div className="casual-container relative min-h-screen">
+        <div className="tab:left-[calc(50%-95px)] tab:w-[60%] tab:translate-x-0 absolute bottom-24 left-1/2 w-full -translate-x-1/2">
+          <p className="text-whitef0 pc:max-w-150 tab:max-w-120 tab:mx-0 mx-auto mb-5 max-w-90 text-2xl leading-[100%] font-medium tracking-[0%] whitespace-pre-line uppercase">
+            {t("weDoEnd")}
+          </p>
+          <MaskLink
+            noArrow
+            text={t("btnContactUs")}
+            white
+            link={dezTelegram}
+            className="tab:max-w-47.5 tab:mx-0 mx-auto w-full max-w-80"
+          />
+        </div>
       </div>
     </section>
   );

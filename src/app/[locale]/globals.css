@@ -33,6 +33,9 @@ body {
   letter-spacing: 0%;
   line-height: 1.3;
 }
+/* * {
+  outline: 1px solid red;
+} */
 
 button,
 a {
@@ -278,5 +281,25 @@ a {
 }
 .gradient-slider-face {
   backdrop-filter: blur(10px);
-  /* background: #050505c2; */
+  border: 1px solid;
+  border-image-source: linear-gradient(
+    181.09deg,
+    #050505 -65.2%,
+    #050505 -64%,
+    #060505 -60.56%,
+    #070505 -55.07%,
+    #0a0605 -47.74%,
+    #0e0605 -38.8%,
+    #150705 -28.44%,
+    #1e0906 -16.87%,
+    #2b0b06 -4.31%,
+    #3b0d06 9.04%,
+    #4f1007 22.97%,
+    #671407 37.26%,
+    #841808 51.71%,
+    #a71e09 66.11%,
+    #cf2409 80.25%,
+    #fe2b0a 93.92%
+  );
+  border-image-slice: 1;
 }
