@@ -33,7 +33,7 @@ export const ProjectsList = ({
       requestAnimationFrame(() => {
         const isTablet = window.innerWidth >= 768;
 
-        const triggerLine = isTablet ? 220 : window.innerHeight * 0.35;
+        const triggerLine = isTablet ? 220 : window.innerHeight * 0.45;
         let newIndex = 0;
 
         itemRefs.current.forEach((el, index) => {
