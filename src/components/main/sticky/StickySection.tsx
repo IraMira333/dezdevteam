@@ -48,7 +48,7 @@ export const StickySection = () => {
       </div>
 
       <div className="casual-container relative min-h-screen">
-        <div className="tab:left-[calc(50%-95px)] tab:w-[60%] tab:translate-x-0 absolute bottom-24 left-1/2 w-full -translate-x-1/2">
+        <div className="tab:left-[calc(50%-95px)] tab:w-[55%] pc:w-[40%] tab:translate-x-0 absolute bottom-24 left-1/2 w-full -translate-x-1/2">
           <p className="text-whitef0 pc:max-w-150 tab:max-w-120 tab:mx-0 mx-auto mb-5 max-w-90 text-2xl leading-[100%] font-medium tracking-[0%] whitespace-pre-line uppercase">
             {t("weDoEnd")}
           </p>
