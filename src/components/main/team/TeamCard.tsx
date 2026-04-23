@@ -18,7 +18,7 @@ export const TeamCard = ({ data, locale }: { data: TeamMember; locale: LocaleTyp
         />
       </div>
       <div>
-        <h3 className="text-whiteff tab:text-lg text-base leading-[150%] font-semibold tracking-[0%]">
+        <h3 className="text-whiteff tab:w-full tab:text-lg w-30 text-base leading-[150%] font-semibold tracking-[0%]">
           {data[locale].name}
         </h3>
         <p className="tab:w-fit mx-auto w-25 leading-[143%] tracking-[1.4px] uppercase">
