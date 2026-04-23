@@ -59,9 +59,9 @@ export const ProjectsList = ({
   const activeProject = list[activeIndex];
 
   return (
-    <div id="projects" className="tab:flex tab:justify-between tab:pl-6 pc:pl-20">
+    <div id="projects" className="tab:flex tab:pb-16 tab:justify-between tab:pl-6 pc:pl-20">
       <ProjectImage title={activeProject.en.title} image={activeProject.image} />
-      <div className="tab:w-[61%] tab:px-6 pc:pr-20 tab:mb-28 relative mb-26.5 px-4">
+      <div className="tab:w-[61%] tab:px-6 pc:pr-20 tab:mb-0 relative mb-26.5 px-4">
         <h2 className="text-grey88 mb-11 flex gap-2 leading-[130%] font-medium tracking-[1.4px] uppercase">
           <IconBullet className="h-3.5 w-3.5" />
           {t("ourProjects", { year: new Date().getFullYear() })}
@@ -82,31 +82,32 @@ export const ProjectsList = ({
               >
                 <div className="bg-black06 tab:p-4 rounded-xl p-3">
                   <AnimatePresence initial={false}>
-                    {isActive && (
-                      <motion.div
-                        key="image"
-                        initial={{ opacity: 0, scale: 0.98 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.98 }}
-                        transition={{ duration: 0.4 }}
-                        className="tab:hidden relative overflow-hidden"
-                      >
-                        <div className="relative mx-auto mb-4 aspect-326/242 h-auto w-full max-w-111">
-                          <Image
-                            src={project.image}
-                            alt={project[locale].title}
-                            fill
-                            className="object-cover"
+                    <motion.div
+                      initial={false}
+                      animate={{
+                        opacity: isActive ? 1 : 0,
+                        scale: isActive ? 1 : 0.98,
+                        height: isActive ? "auto" : 0,
+                      }}
+                      style={{ overflow: "hidden" }}
+                      transition={{ duration: 0.4 }}
+                      className="tab:hidden"
+                    >
+                      <div className="relative mx-auto mb-4 aspect-326/242 h-auto w-full max-w-111">
+                        <Image
+                          src={project.image}
+                          alt={project[locale].title}
+                          fill
+                          className="object-cover"
+                        />
+                        <div className="absolute top-1 right-1">
+                          <MaskLink
+                            link={project.link}
+                            className="flex w-11! items-center justify-center"
                           />
-                          <div className="absolute top-1 right-1">
-                            <MaskLink
-                              link={project.link}
-                              className="flex w-11! items-center justify-center"
-                            />
-                          </div>
                         </div>
-                      </motion.div>
-                    )}
+                      </div>
+                    </motion.div>
                   </AnimatePresence>
 
                   <div className="tab:flex-row-reverse mb-3 flex items-center justify-between gap-4">
@@ -119,30 +120,33 @@ export const ProjectsList = ({
 
                   <div className="">
                     <p className="text-base leading-[130%]">{project[locale].services}</p>
-                    <ul className="tab:flex tab:gap-1 mt-4 hidden">
+                    <ul className="mt-4 flex gap-1">
                       {project[locale].details.map((d) => (
                         <li key={d} className="border-grey33 w-fit rounded-md border px-2 py-1">
                           {d}
                         </li>
                       ))}
                     </ul>
-                    <AnimatePresence>
-                      {isActive && (
+                    {/* {project[locale].short && (
+                      <AnimatePresence>
                         <motion.ul
-                          key="details"
-                          initial={{ opacity: 0, x: 20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          exit={{ opacity: 0, x: 20 }}
-                          className="tab:hidden mt-3 flex flex-wrap gap-1"
+                          initial={false}
+                          animate={{
+                            opacity: isActive ? 1 : 0,
+                            x: isActive ? 0 : 20,
+                            height: isActive ? "auto" : 0,
+                          }}
+                          style={{ overflow: "hidden" }}
+                          transition={{ duration: 0.3 }}
                         >
-                          {project[locale].details.map((d) => (
-                            <li key={d} className="border-grey33 w-fit rounded-md border px-2 py-1">
+                          {project[locale].short.map((d) => (
+                            <li key={d} className=" ">
                               {d}
                             </li>
                           ))}
                         </motion.ul>
-                      )}
-                    </AnimatePresence>
+                      </AnimatePresence>
+                    )} */}
                   </div>
                 </div>
               </motion.li>
