@@ -94,7 +94,7 @@ export const CubeSlider = ({ list }: { list: string[] }) => {
         </div>
       </div>
 
-      <div className="mb-8 flex items-center gap-2">
+      <div className="prepc:mt-5 mb-8 flex items-center gap-2">
         <div className="flex items-center gap-2">
           {list.map((_, i) => {
             const isActive = i === index;

@@ -121,14 +121,14 @@ export const ProjectsList = ({
                     <IconArrow
                       className={`tab:block tab:w-8 tab:h-8 hidden shrink-0 ${isActive ? "text-accent" : ""}`}
                     />
-                    <ul className="prepc:flex prepc:flex-col prepc:w-[calc((100%-304px)*0.4)] pc:w-[calc((100%-380px)*0.4)] mt-4 hidden gap-1">
+                    <ul className="prepc:flex prepc:flex-col prepc:w-[calc((100%-304px)*0.45)] pc:w-[calc((100%-380px)*0.4)] mt-4 hidden gap-1">
                       {project[locale].details.map((d) => (
                         <li key={d} className="border-grey33 w-fit rounded-md border px-2 py-1">
                           {d}
                         </li>
                       ))}
                     </ul>
-                    <p className="prepc:block prepc:w-[calc((100%-304px)*0.6)] pc:w-[calc((100%-380px)*0.6)] hidden text-base leading-[130%]">
+                    <p className="prepc:block prepc:w-[calc((100%-304px)*0.55)] pc:w-[calc((100%-380px)*0.6)] hidden text-base leading-[130%]">
                       {project[locale].done}
                     </p>
 
