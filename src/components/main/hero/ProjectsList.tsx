@@ -61,14 +61,14 @@ export const ProjectsList = ({
   return (
     <div
       id="projects"
-      className="tab:flex tab:pb-16 prepc:pb-8 tab:justify-between tab:pl-6 pc:pl-20"
+      className="tab:flex tab:gap-4 pc:gap-8 tab:pb-16 prepc:pb-8 tab:justify-between"
     >
       <ProjectImage
         title={activeProject.en.title}
         image={activeProject.image}
         text={activeProject[locale].services}
       />
-      <div className="tab:w-[61%] tab:px-6 pc:pr-20 tab:mb-0 prepc:mb-70 relative mb-26.5 px-4">
+      <div className="tab:w-[61%] pc:w-[67%] tab:p-0 tab:mb-0 prepc:mb-70 relative mb-26.5 px-4">
         <h2 className="text-grey88 mb-11 flex gap-2 leading-[130%] font-medium tracking-[1.4px] uppercase">
           <IconBullet className="h-3.5 w-3.5" />
           {t("ourProjects", { year: new Date().getFullYear() })}
@@ -121,14 +121,14 @@ export const ProjectsList = ({
                     <IconArrow
                       className={`tab:block tab:w-8 tab:h-8 hidden shrink-0 ${isActive ? "text-accent" : ""}`}
                     />
-                    <ul className="prepc:flex prepc:flex-col prepc:w-[calc((100%-304px)*0.4)] pc:w-[calc((100%-380px)*0.4)] mt-4 hidden gap-1">
+                    <ul className="prepc:flex prepc:flex-col prepc:w-[calc((100%-304px)*0.45)] pc:w-[calc((100%-380px)*0.4)] mt-4 hidden gap-1">
                       {project[locale].details.map((d) => (
                         <li key={d} className="border-grey33 w-fit rounded-md border px-2 py-1">
                           {d}
                         </li>
                       ))}
                     </ul>
-                    <p className="prepc:block prepc:w-[calc((100%-304px)*0.6)] pc:w-[calc((100%-380px)*0.6)] hidden text-base leading-[130%]">
+                    <p className="prepc:block prepc:w-[calc((100%-304px)*0.55)] pc:w-[calc((100%-380px)*0.6)] hidden text-base leading-[130%]">
                       {project[locale].done}
                     </p>
 

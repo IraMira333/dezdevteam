@@ -41,8 +41,8 @@ export const Clients = () => {
       </div>
 
       <div className="tab:max-w-full mx-auto max-w-90">
-        <div className="bg-grey33 prepc:mb-12 mb-8 h-px w-full" />
-        <div className="tab:max-w-full tab:w-2/3 prepc:w-3/5 tab:mr-0 tab:flex tab:gap-3 mx-auto">
+        {/* <div className="bg-grey33 prepc:mb-12 mb-8 h-px w-full" /> */}
+        <div className="tab:max-w-full border-black0a/20 prepc:pt-12 tab:w-2/3 prepc:w-3/5 tab:mr-0 tab:flex tab:gap-3 mx-auto border-t pt-8">
           <div className="tab:mb-0 tab:w-1/2 mb-8">
             <Subtitle text={t("servicesTitle")} dark className="mb-5" />
             <ul className="flex flex-col gap-3">
