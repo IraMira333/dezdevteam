@@ -59,16 +59,13 @@ export const ProjectsList = ({
   const activeProject = list[activeIndex];
 
   return (
-    <div
-      id="projects"
-      className="tab:flex tab:pb-16 prepc:pb-8 tab:justify-between tab:pl-6 pc:pl-20"
-    >
+    <div id="projects" className="tab:flex tab:gap-4 tab:pb-16 prepc:pb-8 tab:justify-between">
       <ProjectImage
         title={activeProject.en.title}
         image={activeProject.image}
         text={activeProject[locale].services}
       />
-      <div className="tab:w-[61%] tab:px-6 pc:pr-20 tab:mb-0 prepc:mb-70 relative mb-26.5 px-4">
+      <div className="tab:w-[61%] pc:w-[67%] tab:p-0 tab:mb-0 prepc:mb-70 relative mb-26.5 px-4">
         <h2 className="text-grey88 mb-11 flex gap-2 leading-[130%] font-medium tracking-[1.4px] uppercase">
           <IconBullet className="h-3.5 w-3.5" />
           {t("ourProjects", { year: new Date().getFullYear() })}

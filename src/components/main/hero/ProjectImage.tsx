@@ -11,7 +11,7 @@ export const ProjectImage = ({
   text: string;
 }) => {
   return (
-    <div className="tab:sticky tab:top-24 prepc:top-28 tab:block prepc:aspect-[326/380] hidden aspect-[326/242] h-fit w-[38vw]">
+    <div className="tab:sticky tab:top-24 prepc:top-28 tab:block prepc:aspect-[326/380] pc:w-[33vw] hidden aspect-[326/242] h-fit w-[38vw]">
       <AnimatePresence mode="wait">
         <motion.div
           key={title}
