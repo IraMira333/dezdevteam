@@ -4,6 +4,7 @@ export type ProjectType = {
   services: string;
   details: string[];
   short?: string[];
+  done: string;
 };
 
 export type ProjectsDataType = {
@@ -26,12 +27,14 @@ export const projectsData: ProjectsDataType[] = [
     uk: {
       title: "Британський Офтольмологічний Центр",
       description: "Офтальмологічна клініка в Києві",
+      done: "Редизайн сайту та повна міграція з WordPress",
       services: "Редизайн сайту та повна міграція з WordPress для офтальмологічної клініки",
       details: ["Корпоративний Сайт", "Редизайн", "Sanity CMS"],
     },
     en: {
       title: "British Ophthalmological Center",
       description: "Ophthalmology clinic in Kyiv",
+      done: "Website redesign and full WordPress migration",
       services: "Website redesign and full WordPress migration for an ophthalmology clinic",
       details: ["Corporate Website", "Redesign", "Sanity CMS"],
     },
@@ -48,6 +51,7 @@ export const projectsData: ProjectsDataType[] = [
       services:
         "Дизайн та розробка лендінгу для студії відеомонтажу, що передає її творчий підхід і професійність через візуальну мову та структуру сайту. Основна мета — не просто презентувати послуги, а занурити користувача в атмосферу бренду, показати стиль робіт і викликати емоційний відгук. Сайт також виконує роль платформи для знайомства з портфоліо та швидкого зв’язку з монтажеркою.",
       details: ["Лендінг", "Оптимізація відео і зображень"],
+      done: "Дизайн та розробка лендінгу",
       short: [
         "Це лендінг для студії відеомонтажу, що передає її творчий підхід і професійність через візуальну мову та структуру сайту. Основна мета — не просто презентувати послуги, а занурити користувача в атмосферу бренду, показати стиль робіт і викликати емоційний відгук. Сайт також виконує роль платформи для знайомства з портфоліо та швидкого зв’язку з монтажеркою.",
         "Проєкт поєднує продуману функціональність із виразним дизайном. Інтуїтивна навігація, FAQ, двомовність і прості способи контакту забезпечують зручний користувацький досвід, а візуальні рішення — від відео на першому екрані до анімацій і динамічного градієнта — підсилюють залучення та фокусують увагу на ключових елементах.",
@@ -60,6 +64,7 @@ export const projectsData: ProjectsDataType[] = [
       services:
         "Landing page design and development for a video editing studio that communicates its creative approach and professionalism through visual language and site structure. The main goal is not just to present services, but to immerse users in the brand’s atmosphere, showcase the style of work, and create an emotional connection. The website also serves as a platform to explore the portfolio and quickly get in touch with the editor.",
       details: ["Landing Page", "Video and Image Optimization"],
+      done: "Landing page design and development",
       short: [
         "This is a landing page for a video editing studio that communicates its creative approach and professionalism through visual language and site structure. The main goal is not just to present services, but to immerse users in the brand’s atmosphere, showcase the style of work, and create an emotional connection. The website also serves as a platform to explore the portfolio and quickly get in touch with the editor.",
         "The project combines thoughtful functionality with expressive design. Intuitive navigation, an FAQ section, bilingual support, and simple contact options ensure a smooth user experience, while visual elements — from the hero video to animations and dynamic gradients — enhance engagement and focus attention on key content.",
@@ -79,6 +84,7 @@ export const projectsData: ProjectsDataType[] = [
       services:
         "Дизайн та розробка лендінгу для виробника безпілотних систем, який передає експертність команди та їхній бойовий досвід через візуальну подачу та структуру сайту. Основний акцент зроблено на надійності, технологічності та реальному застосуванні дронів у бойових умовах, що формує довіру до продукту та підсилює цінність бренду.",
       details: ["Лендінг", "3D анімація"],
+      done: "Дизайн та розробка лендінгу",
       short: [
         "Це лендінг для виробника безпілотних систем, який передає експертність команди та їхній бойовий досвід через візуальну подачу та структуру сайту. Основний акцент зроблено на надійності, технологічності та реальному застосуванні дронів у бойових умовах, що формує довіру до продукту та підсилює цінність бренду.",
         "Сайт поєднує чітку інформаційну структуру з виразною візуальною складовою. Контент побудований навколо послуг, підходу до роботи та цінностей команди, а інтерактивні елементи — зокрема 3D-модель дрона, яка рухається під час скролу — створюють ефект присутності та занурення в продукт.",
@@ -91,6 +97,7 @@ export const projectsData: ProjectsDataType[] = [
       services:
         "Design and development of a landing page for an unmanned systems manufacturer, conveying the team’s expertise and combat experience through visual presentation and site structure. The main focus is on reliability, technological strength, and real-world drone applications in combat conditions, building trust in the product and reinforcing the brand’s value.",
       details: ["Landing page", "3D animation"],
+      done: "Design and development of a landing page",
       short: [
         "This is a landing page for an unmanned systems manufacturer that communicates the team’s expertise and combat experience through visual language and site structure. The main focus is on reliability, advanced technology, and real-world drone applications in combat conditions, building trust in the product and strengthening the brand’s value.",
         "The website combines a clear informational structure with a strong visual component. The content is built around services, workflow, and team values, while interactive elements — including a 3D drone model that moves during scroll — create a sense of presence and immersion into the product.",
@@ -114,6 +121,7 @@ export const projectsData: ProjectsDataType[] = [
         "Платформа поєднує чітку структуру з інформативною подачею: користувач може швидко ознайомитися з напрямами діяльності — протезуванням, ортезуванням і постачанням комплектуючих. Акцент зроблено на доступності послуг, зрозумілій навігації та можливості отримати консультацію або розпочати процес протезування.",
         "Особливу увагу приділено змісту та користувацькому досвіду: сайт пояснює складні медичні процеси простою мовою, демонструє рішення для різних потреб і підкреслює індивідуальний підхід до кожного пацієнта. У результаті формується зрозумілий, довірливий і соціально значущий цифровий продукт.",
       ],
+      done: "Дизайн та розробка сайту",
       details: ["Корпоративний Сайт", "Sanity CMS"],
     },
     en: {
@@ -126,6 +134,7 @@ export const projectsData: ProjectsDataType[] = [
         "The platform combines a clear structure with informative content: users can quickly explore key areas such as prosthetics, orthotics, and component supply. The focus is on service accessibility, intuitive navigation, and the ability to get a consultation or begin the prosthetics process.",
         "Special attention is given to content and user experience: the website explains complex medical processes in simple terms, presents solutions for different needs, and emphasizes an individual approach to each patient. As a result, it creates a clear, trustworthy, and socially impactful digital product.",
       ],
+      done: "Design and development of a website",
       details: ["Corporate Website", "Sanity CMS"],
     },
   },
@@ -145,6 +154,7 @@ export const projectsData: ProjectsDataType[] = [
         "Побудувано чітку інформаційну архітектуру, яка дозволяє користувачам швидко зрозуміти спектр послуг і технологій: аерофотозйомку, цифрову картографію та лазерне сканування. Особливу увагу приділили подачі складного технічного контенту — зробили його структурованим, візуально зрозумілим і легким для сприйняття.",
         "У дизайні ми підкреслено інженерний характер продукту через мінімалістичну стилістику, акценти на деталях і медіаконтент. Візуальні блоки, зображення обладнання та процесів, а також логічна побудова секцій формують цілісний досвід взаємодії, який демонструє точність, масштаб і технологічність рішень компанії.",
       ],
+      done: "Дизайн та розробка лендінгу",
       details: ["Лендінг", "Створення корпоративної пошти", "Підтримка сайту"],
     },
     en: {
@@ -157,6 +167,7 @@ export const projectsData: ProjectsDataType[] = [
         "A clear information architecture was built to help users quickly understand the range of services and technologies: aerial photography, digital mapping, and laser scanning. Special attention was given to presenting complex technical content in a structured, visually clear, and easily digestible way.",
         "In the design, we emphasized the engineering nature of the product through a minimalistic visual style, attention to detail, and media content. Visual blocks, equipment and process imagery, and a logical section structure create a cohesive experience that highlights the precision, scale, and technological strength of the company’s solutions.",
       ],
+      done: "Design and development of a landing page",
       details: ["Landing Page", "Business Email Setup", "Support"],
     },
   },
@@ -176,6 +187,7 @@ export const projectsData: ProjectsDataType[] = [
         "Інформаційна архітектура побудована так, щоб користувач швидко знаходив потрібні сценарії звернення — від отримання дозволів на проживання до оскарження рішень міграційної служби. Контент поділено на логічні блоки з акцентом на типові кейси клієнтів, що спрощує навігацію у складній юридичній тематиці.",
         "Візуальна система та подача контенту орієнтовані на довіру та ясність: мінімалістичний дизайн, акцент на текстовій експертизі, структуровані списки послуг і зрозумілі пояснення процесів формують відчуття професійності та прозорості. Сайт підсилює головну ідею бренду — захист прав клієнта через юридичну експертизу та практичний досвід.",
       ],
+      done: "Дизайн та розробка корпоративного сайту",
       details: ["Корпоративний Сайт", "SEO Оптимізація", "Підтримка сайту"],
     },
     en: {
@@ -188,6 +200,7 @@ export const projectsData: ProjectsDataType[] = [
         "The information architecture is designed so users can quickly find relevant legal scenarios — from residence permits to appeals against migration service decisions. Content is organized into logical blocks focused on typical client cases, making navigation through complex legal topics more accessible.",
         "The visual system and content presentation are focused on trust and clarity: a minimalist design, emphasis on textual expertise, structured service lists, and clear explanations of legal processes create a sense of professionalism and transparency. The website reinforces the core brand idea — protecting client rights through legal expertise and practical experience.",
       ],
+      done: "Corporate website design and development",
       details: ["Corporate Website", "SEO Optimization", "Support"],
     },
   },
