@@ -63,7 +63,7 @@ export const FloatingGallery = () => {
           key={`${item.src}-${i}`}
           src={item.src}
           alt=""
-          className="absolute object-cover transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+          className="absolute object-cover transition-all duration-700 ease-in-out"
           width={627}
           height={503}
           style={{
