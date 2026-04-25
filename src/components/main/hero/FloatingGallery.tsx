@@ -15,15 +15,13 @@ const images = [
   "/images/card-willow.jpg",
 ];
 
-const createSeed = () => Math.random() * 10000;
-
 const seededRandom = (seed: number, base: number) => {
   const x = Math.sin(seed + base * 12.9898) * 43758.5453;
   return x - Math.floor(x);
 };
 
 export const FloatingGallery = () => {
-  const seed = React.useMemo(() => createSeed(), []);
+  const seed = 1337;
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
   const cols = 6;
