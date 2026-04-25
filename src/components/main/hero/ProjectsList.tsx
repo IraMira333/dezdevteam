@@ -61,7 +61,7 @@ export const ProjectsList = ({
   return (
     <div
       id="projects"
-      className="tab:flex tab:gap-4 pc:gap-8 tab:pb-16 prepc:pb-8 tab:justify-between"
+      className="tab:flex tab:gap-4 pc:gap-8 tab:pb-16 prepc:pb-8 tab:justify-between pt-28"
     >
       <ProjectImage
         title={activeProject.en.title}
@@ -132,7 +132,7 @@ export const ProjectsList = ({
                       {project[locale].done}
                     </p>
 
-                    <h3 className="text-whitef0 prepc:w-46 text-2xl leading-[120%] font-medium">
+                    <h3 className="text-whitef0 prepc:w-46 text-xl leading-[120%] font-medium">
                       {project[locale].title}
                     </h3>
                     <p className="prepc:text-base prepc:w-10 pc:w-17.5">{project.year}</p>
