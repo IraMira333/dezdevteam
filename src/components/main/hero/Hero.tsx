@@ -21,7 +21,7 @@ export const Hero = () => {
             {t("text")}
           </p>
         </div>
-        <div className="tab:w-[56%] prepc:w-[65%] tab:mb-0 tab:ml-auto tab:mr-0 relative mx-auto mb-26.5 aspect-[125/100] h-auto w-full">
+        <div className="tab:w-[56%] prepc:w-[65%] tab:ml-auto tab:mr-0 relative mx-auto aspect-[125/100] h-auto w-full">
           <FloatingGallery />
           <div className="absolute right-20 -bottom-20 hidden">
             <GlowButton text="Дивитись проєкт" />
