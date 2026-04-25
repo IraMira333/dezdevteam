@@ -1,5 +1,5 @@
 export const dezTelegram = "https://t.me/iryna_stoliarova";
-export const dezWhatsApp = "https://wa.me/380633333333";
+export const dezWhatsApp = "https://wa.me/380954249078";
 export const devTelegram = "https://t.me/iramira333";
 export const devWhatsApp = "https://wa.me/380939449063";
 

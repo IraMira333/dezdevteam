@@ -25,8 +25,8 @@ export const projectsData: ProjectsDataType[] = [
     link: "https://eyes.ua/",
     icon: "/icons/client-logo1.svg",
     uk: {
-      title: "Британський Офтольмологічний Центр",
-      description: "Офтальмологічна клініка в Києві",
+      title: "Британський Офтальмологічний Центр",
+      description: "Офтальмалогічна клініка в Києві",
       done: "Редизайн сайту та повна міграція з WordPress",
       services: "Редизайн сайту та повна міграція з WordPress для офтальмологічної клініки",
       details: ["Корпоративний Сайт", "Редизайн", "Sanity CMS"],
