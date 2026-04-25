@@ -61,7 +61,7 @@ export const ProjectsList = ({
   return (
     <div
       id="projects"
-      className="tab:flex tab:gap-4 pc:gap-8 tab:pb-16 prepc:pb-8 tab:justify-between pt-28"
+      className="tab:flex tab:gap-4 pc:gap-8 tab:pb-16 prepc:pb-8 tab:justify-between pt-8"
     >
       <ProjectImage
         title={activeProject.en.title}
