@@ -13,11 +13,11 @@ export const Hero = () => {
   const locale = useLocale();
 
   return (
-    <section className="nopadding-container tab:px-6 prepc:px-10 pc:px-20 overflow-hidden">
-      <div className="tab:flex tab:pb-16 prepc:pt-20 pc:pt-26 tab:justify-between min-h-[calc(100vh-77px)] pt-17.5">
-        <div className="tab:flex tab:px-0 tab:w-[43%] prepc:w-[35%] tab:flex-col tab:justify-between tab:mb-0 mb-8 px-4">
+    <section className="nopadding-container tab:px-6 prepc:px-10 pc:px-20">
+      <div className="tab:flex tab:pb-16 prepc:pt-20 pc:pt-26 tab:justify-between min-h-[calc(100vh-77px)] overflow-hidden pt-17.5">
+        <div className="tab:flex tab:px-0 tab:w-[44%] prepc:w-[35%] tab:flex-col tab:justify-between tab:mb-0 mb-8 px-4">
           <CustomTitleH1 text={t("title")} className="mb-10" />
-          <p className="text-whitef0 text-[56px] leading-[90%] font-medium whitespace-pre-line uppercase">
+          <p className="text-whitef0 prepc:text-5xl pc:text-[56px] text-4xl font-medium whitespace-pre-line uppercase">
             {t("text")}
           </p>
         </div>
