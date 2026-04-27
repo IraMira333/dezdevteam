@@ -55,14 +55,14 @@ export const FooterLight = () => {
           </div>
           <div className="">
             <p className="text-grey88 mb-2 leading-[100%] uppercase">{t("footerMedia")}</p>
-            <ul className="flex flex-col gap-4">
+            <ul className="group flex flex-col gap-4">
               {footerContacts.map((contact) => (
                 <li key={contact.media}>
                   <a
                     href={contact.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-whiteff hover:text-grey88 text-base leading-[150%] transition-all duration-300 ease-in-out hover:underline"
+                    className="text-whiteff group-hover:text-grey88 hover:text-whiteff text-base leading-[150%] transition-all duration-300 ease-in-out"
                   >
                     {contact.media}
                   </a>
