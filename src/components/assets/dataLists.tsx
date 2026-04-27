@@ -74,21 +74,23 @@ export const weDoList: WeDoListType[] = [
   },
 ];
 
+//TODO: Дизайн і розробка цифрових продуктів для брендів, які прагнуть чіткості, естетики та результату.
+
 export const cubeList = {
   uk: {
     list: [
-      "нас об’єднує глибоке творче натхнення, любов до співпраці та прагнення втілювати сміливі рішення для ваших ідей.",
-      "Кожен проект адаптований до цілей вашого бренду, аудиторії та стилю — без шаблонів, тільки індивідуальний підхід.",
-      "ми пропонуємо постійне обслуговування, оновлення дизайну та моніторинг продуктивності, щоб допомогти вашому проекту розвиватися в довгостроковій перспективі.",
-      "ми працюємо у сферах креативу, технологій, лайфстайлу та стартапів, зосереджуючись на брендах, які цінують стратегію, чіткість та вплив дизайну.",
+      "Нас об’єднує глибока творча експертиза, досвід у дизайні та розробці цифрових продуктів, а також прагнення створювати ефективні та візуально сильні рішення для бізнесу.",
+      "Кожен проєкт ми адаптуємо під цілі бренду, його аудиторію та ринкову позицію — без шаблонних рішень, лише індивідуальна стратегія та дизайн.",
+      "Ми забезпечуємо повний цикл супроводу: від дизайну та розробки до підтримки, оновлень і оптимізації продуктивності, щоб продукт стабільно розвивався після запуску.",
+      "Працюємо з компаніями у сферах креативу, технологій, лайфстайлу та стартапів, фокусуючись на брендах, які цінують стратегію, чіткість і впливовий дизайн.",
     ],
   },
   en: {
     list: [
-      "what unites us is a deep creative drive, a love for collaboration, and a desire to bring bold ideas to life.",
-      "each project is tailored to your brand’s goals, audience, and style — no templates, only a custom approach.",
-      "we provide ongoing support, design updates, and performance monitoring to help your project grow in the long term.",
-      "we work across creative, technology, lifestyle, and startup industries, focusing on brands that value strategy, clarity, and impactful design.",
+      "We are united by deep creative expertise, experience in design and digital product development, and a drive to create effective and visually strong solutions for businesses.",
+      "We tailor each project to the brand’s goals, audience, and market position — no templates, only a fully custom strategy and design approach.",
+      "We provide full-cycle support: from design and development to maintenance, updates, and performance optimization, ensuring the product continues to grow after launch.",
+      "We work with companies in creative, technology, lifestyle, and startup industries, focusing on brands that value strategy, clarity, and impactful design.",
     ],
   },
 };
@@ -101,67 +103,69 @@ export type HowWeWorkType = {
 
 export const howWeWorkList: { uk: HowWeWorkType[]; en: HowWeWorkType[] } = {
   uk: [
+    //
     {
       title: "Ознайомча зустріч",
       icon: <IconStage1 />,
       description:
-        "Збір інформації по цілям і задачам бізнесу, наявним матеріалам, очікувань по термінам.",
+        "Аналіз цілей бізнесу, наявних матеріалів та очікуваних термінів. Формуємо чітке розуміння задач проєкту.",
     },
     {
       title: "Стратегія та дослідження",
       icon: <IconStage2 />,
       description:
-        "Ми починаємо з розробки індивідуальних стратегій та проведення глибоких досліджень для виявлення важливих інсайтів. Це створює надійний план дій для досягнення значних, вимірюваних результатів.",
+        "Глибоке дослідження ринку та аудиторії для формування ефективної стратегії та прийняття обґрунтованих дизайн-рішень.",
     },
     {
       title: "Дизайн і прототип",
       icon: <IconStage3 />,
       description:
-        "Ми перетворюємо ідеї на привабливі дизайни та функціональні прототипи, які втілюють вашу візію в життя. Такий підхід забезпечує безперебійну співпрацю та ранню валідацію.",
+        "Перетворення ідей у візуальні концепції та інтерактивні прототипи, що дозволяють швидко перевірити рішення ще до розробки.",
     },
     {
-      title: "розробка, тестування та оптимізація",
+      title: "Розробка, тестування та оптимізація",
       icon: <IconStage4 />,
       description:
-        "Ми розробляємо надійні рішення, проводимо ретельне тестування та налагоджуємо роботу для досягнення максимальної продуктивності. ",
+        "Реалізація продукту з фокусом на якість, продуктивність і стабільність. Повне тестування та технічна оптимізація перед запуском.",
     },
     {
       title: "Запуск проєкту та підтримка",
       icon: <IconStage5 />,
       description:
-        "Ми запускаємо проект з точністю і надаємо постійну підтримку, щоб допомогти вашому продукту розвиватися. Завдяки глибокому розумінню ваших цілей і користувачів, ми забезпечуємо швидкі і тривалі результати.",
+        "Запуск продукту та подальший супровід: оновлення, підтримка та розвиток відповідно до потреб бізнесу й користувачів.",
     },
   ],
   en: [
+    //
     {
       title: "Discovery Meeting",
       icon: <IconStage1 />,
       description:
-        "We gather information about your business goals and objectives, existing materials, and expectations regarding timelines.",
+        "Analysis of business goals, existing materials, and expected timelines. We form a clear understanding of the project scope and objectives.",
     },
     {
       title: "Strategy & Research",
       icon: <IconStage2 />,
       description:
-        "We start by developing tailored strategies and conducting in-depth research to uncover key insights. This creates a solid action plan for achieving meaningful, measurable results.",
+        "In-depth market and audience research to define an effective strategy and support informed design decisions.",
     },
     {
       title: "Design & Prototyping",
       icon: <IconStage3 />,
       description:
-        "We transform ideas into engaging designs and functional prototypes that bring your vision to life. This approach ensures smooth collaboration and early validation.",
+        "Transforming ideas into visual concepts and interactive prototypes that allow for early validation before development.",
     },
     {
       title: "Development, Testing & Optimization",
       icon: <IconStage4 />,
       description:
-        "We build robust solutions, conduct thorough testing, and fine-tune performance to ensure optimal results.",
+        "Building the product with a focus on quality, performance, and stability. Full testing and technical optimization before launch.",
     },
     {
       title: "Launch & Support",
       icon: <IconStage5 />,
       description:
-        "We launch your project with precision and provide ongoing support to help your product grow. With a deep understanding of your goals and users, we deliver fast and long-lasting results.",
+        "Product launch and ongoing support: updates, maintenance, and continuous development aligned with business and user needs.",
     },
   ],
 };

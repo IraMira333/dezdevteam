@@ -2,6 +2,8 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
+import { GlowButton } from "../../shared/GlowButton";
+
 const images = [
   "/images/card-anvil.jpg",
   "/images/card-bestortho.jpg",
@@ -70,7 +72,7 @@ export const FloatingGallery = () => {
             width: item.isActive ? "80%" : "calc(100% / 6)",
             height: item.isActive ? "auto" : "auto",
 
-            zIndex: item.isActive ? 50 : 1,
+            zIndex: item.isActive ? 10 : 1,
             transitionDelay: item.isActive ? "0ms" : "100ms",
             left: item.isActive ? "50%" : `${item.left}%`,
             top: item.isActive ? "50%" : `${item.top}%`,
@@ -81,6 +83,9 @@ export const FloatingGallery = () => {
           }}
         />
       ))}
+      <div className="absolute right-[25%] -bottom-[1%] z-[21] hidden">
+        <GlowButton text="Дивитись проєкт" />
+      </div>
     </div>
   );
 };

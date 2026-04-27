@@ -3,10 +3,24 @@ import { IconUp } from "./icons/IconUp";
 
 export const UpButton = ({ className, text }: { className?: string; text: string }) => {
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    const start = window.scrollY;
+    const duration = 800;
+    const startTime = performance.now();
+
+    const ease = (t: number) => 1 - Math.pow(1 - t, 3);
+
+    const animate = (currentTime: number) => {
+      const time = Math.min(1, (currentTime - startTime) / duration);
+      const eased = ease(time);
+
+      window.scrollTo(0, start * (1 - eased));
+
+      if (time < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
   };
   return (
     <button
