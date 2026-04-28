@@ -19,7 +19,7 @@ export const Clients = () => {
   ];
 
   return (
-    <section className="tab:py-10 prepc:pt-20 pc:pt-24 prepc:pb-15 tab:px-6 prepc:px-10 pc:px-20 mx-auto mb-24 min-h-[calc(100vh-77px)] w-full max-w-400 overflow-hidden bg-[url('/bgimages/bg-clients.jpg')] bg-cover bg-center px-4 py-17.5">
+    <section className="tab:py-10 prepc:pt-20 pc:pt-24 prepc:pb-15 tab:px-6 prepc:px-10 pc:px-20 mx-auto min-h-[calc(100vh-77px)] w-full max-w-400 overflow-hidden bg-[url('/bgimages/bg-clients.jpg')] bg-cover bg-center px-4 py-17.5">
       <div className="tab:max-w-full tab:w-2/3 prepc:w-3/5 tab:ml-auto tab:mr-0 mx-auto max-w-90">
         <Subtitle text={t("ourClientsTitle")} dark className="mb-6" />
         <ul className="border-black0a/20 tab:max-w-150 tab:w-full prepc:mb-14 pc:mb-18 mb-8 grid grid-cols-3 border-[0.5px]">
