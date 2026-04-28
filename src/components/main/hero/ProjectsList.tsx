@@ -6,7 +6,9 @@ import { useEffect, useRef, useState } from "react";
 
 import { LocaleType } from "@/src/types/LocaleTypes";
 
+import { dezTelegram } from "../../assets/contacts";
 import { ProjectsDataType } from "../../assets/projectsData";
+import { GlowLink } from "../../shared/GlowLink";
 import { IconArrow } from "../../shared/icons/IconArrow";
 import { IconBullet } from "../../shared/icons/IconBullet";
 import { MaskLink } from "../../shared/MaskLink";
@@ -59,18 +61,18 @@ export const ProjectsList = ({
   const activeProject = list[activeIndex];
 
   return (
-    <div id="projects" className="tab:flex tab:gap-4 pc:gap-8 tab:pb-20 tab:justify-between pt-8">
+    <div id="projects" className="tab:flex tab:gap-4 pc:gap-8 tab:pb-8 tab:justify-between pt-8">
       <ProjectImage
         title={activeProject.en.title}
         image={activeProject.image}
         text={activeProject[locale].services}
       />
-      <div className="tab:w-[61%] pc:w-[67%] tab:p-0 tab:mb-0 prepc:mb-70 relative mb-26.5 px-4">
+      <div className="tab:w-[61%] pc:w-[67%] tab:p-0 tab:mb-0 prepc:mb-14 relative mb-14 px-4">
         <h2 className="text-grey88 mb-11 flex gap-2 leading-[130%] font-medium tracking-[1.4px] uppercase">
           <IconBullet className="h-3.5 w-3.5" />
           {t("ourProjects", { year: new Date().getFullYear() })}
         </h2>
-        <ul className="flex w-full flex-col gap-6">
+        <ul className="prepc:mb-10 flex w-full flex-col gap-6">
           {list.map((project, index) => {
             const isActive = index === activeIndex;
 
@@ -115,9 +117,18 @@ export const ProjectsList = ({
                   </AnimatePresence>
 
                   <div className="tab:flex-row-reverse prepc:gap-3 pc:gap-4 mb-3 flex items-center justify-between gap-4">
-                    <IconArrow
-                      className={`tab:block tab:w-8 tab:h-8 hidden shrink-0 ${isActive ? "text-accent" : ""}`}
-                    />
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group overflow-hidden"
+                    >
+                      <div className="arrow-wrapper-tr">
+                        <IconArrow
+                          className={`tab:block arrow-icon tab:w-8 tab:h-8 hidden shrink-0 transition-all duration-300 ease-in-out ${isActive ? "text-accent group-hover:scale-110" : ""}`}
+                        />
+                      </div>
+                    </a>
                     <ul className="prepc:flex prepc:flex-col prepc:w-[calc((100%-304px)*0.45)] pc:w-[calc((100%-380px)*0.4)] mt-4 hidden gap-1">
                       {project[locale].details.map((d) => (
                         <li key={d} className="border-grey33 w-fit rounded-md border px-2 py-1">
@@ -137,13 +148,14 @@ export const ProjectsList = ({
 
                   <div className="prepc:hidden">
                     <p className="text-base leading-[130%]">{project[locale].services}</p>
-                    <ul className="mt-4 flex gap-1">
+                    <ul className="mt-4 flex flex-wrap gap-1">
                       {project[locale].details.map((d) => (
                         <li key={d} className="border-grey33 w-fit rounded-md border px-2 py-1">
                           {d}
                         </li>
                       ))}
                     </ul>
+
                     {/* {project[locale].short && (
                       <AnimatePresence>
                         <motion.ul
@@ -170,6 +182,9 @@ export const ProjectsList = ({
             );
           })}
         </ul>
+        <div className="prepc:block mx-auto hidden w-fit">
+          <GlowLink link={dezTelegram} dark text={t("orderProject")} />
+        </div>
       </div>
     </div>
   );
