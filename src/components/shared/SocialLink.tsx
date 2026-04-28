@@ -21,7 +21,7 @@ export const SocialLink = ({ url, className, iconStyles, text }: Props) => {
       rel="noopener noreferrer"
       className={`flex items-center justify-center ${className}`}
     >
-      <Icon className={iconStyles} />{" "}
+      <Icon className={iconStyles} />
       {text && <span className="ml-2 font-bold uppercase">{text}</span>}
     </a>
   );

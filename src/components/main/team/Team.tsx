@@ -10,7 +10,7 @@ export const Team = () => {
   const t = useTranslations("HomePage");
   const locale = useLocale();
   return (
-    <section className="bg-black03 casual-container prepc:pb-18 pc:pb-26 overflow-hidden pt-4 pb-15">
+    <section className="bg-black03 casual-container prepc:pb-18 pc:pb-26 tab:pt-14 prepc:pt-25 overflow-hidden pt-8 pb-15">
       <div className="tab:flex tab:mb-0 mb-8">
         <div className="tab:w-2/5 mb-12">
           <Subtitle text={t("teamTitle")} className="mb-2" />
@@ -29,7 +29,7 @@ export const Team = () => {
           <TeamCard key={member.en.name} data={member} locale={locale as LocaleType} />
         ))}
       </div>
-      <div className="tab:flex tab:-mt-10">
+      <div className="tab:flex tab:-mt-10 pointer-events-none">
         <p className="text-whitef0 pc:text-9xl pc:w-220 prepc:text-8xl tab:text-6xl tab:w-94 prepc:w-160 pc:mb-8 mb-6 w-75 text-5xl leading-[90%] font-medium -tracking-[6.44px] uppercase">
           {t("teamText2")}
         </p>

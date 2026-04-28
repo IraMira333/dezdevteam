@@ -12,7 +12,7 @@ export const StickySection = () => {
   const locale = useLocale();
   const t = useTranslations("HomePage");
   return (
-    <section className="prepc:mb-25 relative mb-8 bg-[url('/bgimages/bg-wedo.jpg')] bg-cover bg-position-[center_400px]">
+    <section className="tab:pt-14 prepc:pt-24 relative bg-[url('/bgimages/bg-wedo.jpg')] bg-cover bg-position-[center_400px] pt-8">
       <div className="absolute inset-0 bg-[linear-gradient(180deg,#050505_16.25%,rgba(5,5,5,0)_100%)]" />
       <div className="casual-container relative z-10 mb-12 py-4">
         <h2 className="text-whiteff mx-auto mb-6 w-50 text-center text-base leading-[130%] tracking-[0%] uppercase">
