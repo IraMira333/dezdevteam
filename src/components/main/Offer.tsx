@@ -19,7 +19,7 @@ export const Offer = () => {
         />
       </div>
 
-      <div className="tab:pt-14 prepc:pt-6 prepc:pb-16 pc:pb-23.5 absolute top-0 z-1 flex h-full w-[calc(100%-32px)] flex-col justify-between pt-28.5 pb-14">
+      <div className="tab:pt-14 prepc:pt-6 prepc:pb-16 pc:pb-23.5 tab:w-[calc(100%-48px)] prepc:w-[calc(100%-80px)] pc:w-[calc(100%-160px)] absolute top-0 z-1 flex h-full w-[calc(100%-32px)] flex-col justify-between pt-28.5 pb-14">
         <p className="text-whitef0 pc:w-[calc(100%-100px)] pc:text-9xl prepc:text-8xl prepc:w-2/3 tab:w-1/2 tab:text-6xl w-87.5 text-5xl leading-[90%] font-medium tracking-[-6.44px] whitespace-pre-line uppercase">
           {t.rich("offerText1", { grey: (chunk) => <span className="text-grey88">{chunk}</span> })}
         </p>
