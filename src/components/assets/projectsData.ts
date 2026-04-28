@@ -28,14 +28,16 @@ export const projectsData: ProjectsDataType[] = [
       title: "Британський Офтальмологічний Центр",
       description: "Офтальмалогічна клініка в Києві",
       done: "Редизайн сайту та повна міграція з WordPress",
-      services: "Редизайн сайту та повна міграція з WordPress для офтальмологічної клініки",
+      services:
+        "Редизайн сайту та повна міграція з WordPress для офтальмологічної клініки. Проєкт включав розробку сучасного, зручного та адаптивного веб-сайту, який відображає професіоналізм клініки та її орієнтацію на пацієнтів. Основні завдання полягали в оновленні візуального стилю, покращенні навігації та оптимізації контенту для кращого сприйняття інформації про послуги та спеціалістів клініки. ",
       details: ["Корпоративний Сайт", "Редизайн", "Sanity CMS"],
     },
     en: {
       title: "British Ophthalmological Center",
       description: "Ophthalmology clinic in Kyiv",
       done: "Website redesign and full WordPress migration",
-      services: "Website redesign and full WordPress migration for an ophthalmology clinic",
+      services:
+        "Website redesign and full migration from WordPress for an ophthalmology clinic. The project included the development of a modern, user-friendly, and responsive website that reflects the clinic’s professionalism and patient-centered approach. The main goals were to refresh the visual identity, improve navigation, and optimize content for clearer presentation of the clinic’s services and specialists.",
       details: ["Corporate Website", "Redesign", "Sanity CMS"],
     },
   },
