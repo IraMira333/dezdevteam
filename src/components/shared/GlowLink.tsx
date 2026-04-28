@@ -19,7 +19,7 @@ export const GlowLink = ({
       target="_blank"
       rel="noopener noreferrer"
       className={`glow-btn ${
-        small ? "h-24 w-24" : "h-32 w-32"
+        small ? "h-26 w-26" : "h-34 w-34"
       } ${dark ? "glow-dark" : "glow-light"} flex-col gap-3 text-center font-semibold tracking-[1.4px] uppercase ${className}`}
     >
       {text}

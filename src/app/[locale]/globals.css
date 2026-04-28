@@ -224,6 +224,50 @@ a {
       transform: scaleY(1) translateY(0);
     }
   }
+
+  .arrow-wrapper-tr {
+    display: inline-block;
+    cursor: pointer;
+    will-change: transform, opacity;
+  }
+
+  @media (min-width: 1024px) {
+    .group:hover .arrow-wrapper-tr {
+      animation: arrow-fly-tr 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .group:active .arrow-wrapper {
+      animation: arrow-fly-tr 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+  }
+
+  @keyframes arrow-fly-tr {
+    0% {
+      transform: translate(0, 0) scale(1);
+      opacity: 1;
+    }
+    20% {
+      transform: translate(10%, -10%) scale(0.9);
+    }
+    40% {
+      transform: translate(40%, -40%) scale(0.8);
+      opacity: 0.8;
+    }
+    70% {
+      transform: translate(120%, -120%) scale(0.6);
+      opacity: 0;
+    }
+    71% {
+      transform: translate(-120%, 120%) scale(0.6);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 1;
+    }
+  }
 }
 .perspective {
   perspective: 1000px;

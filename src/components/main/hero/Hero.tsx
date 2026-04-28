@@ -14,7 +14,7 @@ export const Hero = () => {
   const locale = useLocale();
 
   return (
-    <section className="nopadding-container tab:px-6 prepc:px-10 pc:px-20 relative">
+    <section className="nopadding-container tab:px-6 prepc:px-10 pc:px-20 tab:pb-12 relative">
       <div className="tab:pb-16 prepc:pt-20 pc:pt-26 min-h-[calc(100vh-77px)] overflow-hidden pt-17.5">
         <div className="tab:flex tab:justify-between">
           <div className="tab:flex tab:px-0 tab:w-[43%] prepc:w-[35%] tab:flex-col tab:justify-between tab:mb-0 mb-8 px-4">
@@ -29,7 +29,7 @@ export const Hero = () => {
         </div>
       </div>
       <ProjectsList list={projectsData} locale={locale as LocaleType} />
-      <div className="absolute -bottom-16 left-1/2 z-10 -translate-x-1/2">
+      <div className="prepc:hidden mx-auto mb-12 w-fit">
         <GlowLink link={dezTelegram} dark text={t("orderProject")} />
       </div>
     </section>
