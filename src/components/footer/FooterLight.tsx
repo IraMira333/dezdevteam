@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 
-import { footerContacts } from "../assets/contacts";
+import { dezTelegram, footerContacts } from "../assets/contacts";
 import { IconArrow } from "../shared/icons/IconArrow";
 import { Subtitle } from "../shared/Subtitle";
 
@@ -48,9 +48,11 @@ export const FooterLight = () => {
         <Subtitle text={t("footerSubTitle")} className="mb-16" />
         <div className="tab:flex tab:justify-between tab:mb-40 mb-12">
           <div className="group tab:mb-0 tab:flex tab:gap-2 tab:w-fit mb-25 w-74">
-            <h2 className="tab:w-70 prepc:text-6xl pc:text-[64px] pc:w-96 prepc:w-90 tab:mb-0 mb-2 text-5xl leading-[90%] font-medium">
-              {t("footerTitle")}
-            </h2>
+            <a href={dezTelegram} target="_blank" rel="noopener noreferrer">
+              <h2 className="tab:w-70 prepc:text-6xl pc:text-[64px] pc:w-96 prepc:w-90 tab:mb-0 mb-2 text-5xl leading-[90%] font-medium">
+                {t("footerTitle")}
+              </h2>
+            </a>
             <IconArrow className="tab:group-hover:rotate-45 tab:h-20 tab:w-20 prepc:w-24 prepc:h-24 pc:w-32 pc:h-32 h-16 w-16 transition-transform duration-300 ease-in-out" />
           </div>
           <div className="">
