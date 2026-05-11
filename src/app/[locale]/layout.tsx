@@ -55,8 +55,8 @@ export default async function LocaleLayout({
     <html lang={locale} className={inter.className}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <meta name="image" property="og:image" content="/public/opengraph.jpg" />
-        <meta name="twitter:image" content="/public/opengraph.jpg" />
+        <meta name="image" property="og:image" content="/opengraph.jpg" />
+        <meta name="twitter:image" content="/opengraph.jpg" />
         <meta name="robots" content="index, follow" />
       </head>
       <body>
