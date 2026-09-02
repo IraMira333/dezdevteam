@@ -45,7 +45,7 @@ export const projectsData: ProjectsDataType[] = [
     id: 5,
     year: 2025,
     image: "/images/card-willow.jpg",
-    link: "https://willow-motion.space/",
+    link: "https://willow-motion.vercel.app/",
     icon: "/icons/client-logo3.svg",
     uk: {
       title: "Willow Motion",
